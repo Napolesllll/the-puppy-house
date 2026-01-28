@@ -251,6 +251,7 @@ const BreedSections = () => {
         name: breed.category.name,
         slug: breed.category.slug,
         description: breed.category.description,
+        image: breed.category.image,
       });
     }
   });
