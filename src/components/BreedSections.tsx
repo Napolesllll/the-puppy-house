@@ -4,17 +4,19 @@ import { motion, AnimatePresence } from "framer-motion";
 import { PawPrint, X, Heart, ChevronLeft, ChevronRight } from "lucide-react";
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { Variants } from "framer-motion"
 
-const cardVariants = {
+
+const cardVariants: Variants = {
   hover: {
     scale: 1.05,
     rotate: [0, 1, -1, 0],
     transition: {
       duration: 0.4,
-      ease: "easeInOut",
+      ease: [0.4, 0.0, 0.2, 1], // equivalente a easeInOut
     },
   },
-};
+}
 
 const BreedCard = ({
   href,
