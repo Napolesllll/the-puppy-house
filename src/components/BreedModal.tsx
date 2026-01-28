@@ -7,14 +7,36 @@ import "swiper/css/pagination";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { PawPrint } from "lucide-react";
 import Image from "next/image";
-import { type Breed } from "@/data/breeds";
 
 interface BreedModalProps {
-  breed: Breed;
+  breed: {
+    id: string;
+    name: string;
+    description: string;
+    image: string;
+    desde?: string;
+    prices?: Array<{
+      id: string;
+      malePrice: number;
+      femalePrice: number;
+    }>;
+    images?: Array<{
+      id: string;
+      url: string;
+      order: number;
+    }>;
+  };
   onClose: () => void;
 }
 
 const BreedModal = ({ breed, onClose }: BreedModalProps) => {
+  // Usar imágenes de la BD si existen, sino usar la imagen principal
+  const breedImages = breed.images && breed.images.length > 0 
+    ? breed.images.map(img => img.url)
+    : [breed.image];
+
+  const malePrice = breed.prices?.[0]?.malePrice || 0;
+  const femalePrice = breed.prices?.[0]?.femalePrice || 0;
   return (
     <div className="fixed inset-0 bg-black/50 flex mt-20 items-center justify-center z-[1000] backdrop-blur-sm">
       <div className="bg-zinc-800 rounded-xl p-4 md:p-8 max-w-4xl w-full mx-4 relative flex flex-col md:flex-row gap-4 md:gap-6 border-2 border-white/10 backdrop-blur-xl">
@@ -33,11 +55,11 @@ const BreedModal = ({ breed, onClose }: BreedModalProps) => {
             autoplay={{ delay: 2000 }}
             className="h-64 md:h-96 shadow-xl rounded-xl overflow-hidden"
           >
-            {breed.images.map((image, index) => (
+            {breedImages.map((imageUrl, index) => (
               <SwiperSlide key={index}>
                 <div className="relative w-full h-full bg-white/5">
                   <Image
-                    src={image}
+                    src={imageUrl}
                     alt={`${breed.name} - ${index + 1}`}
                     fill
                     className="object-contain p-4"
@@ -63,6 +85,11 @@ const BreedModal = ({ breed, onClose }: BreedModalProps) => {
           </div>
 
           <div className="bg-white/5 p-3 md:p-4 rounded-xl border border-amber-400/20 space-y-3">
+            {breed.desde && (
+              <p className="text-xs md:text-sm text-amber-300 text-center font-medium">
+                {breed.desde}
+              </p>
+            )}
             <div className="grid grid-cols-2 gap-3">
               <div className="text-center">
                 <div className="flex items-center justify-center gap-1 mb-1">
@@ -72,7 +99,7 @@ const BreedModal = ({ breed, onClose }: BreedModalProps) => {
                   </p>
                 </div>
                 <p className="text-xl md:text-2xl font-bold text-white">
-                  {breed.desde} ${breed.precio?.macho?.toLocaleString()}
+                  ${malePrice.toLocaleString()}
                 </p>
               </div>
 
@@ -84,7 +111,7 @@ const BreedModal = ({ breed, onClose }: BreedModalProps) => {
                   </p>
                 </div>
                 <p className="text-xl md:text-2xl font-bold text-white">
-                  {breed.desde} ${breed.precio?.hembra?.toLocaleString()}
+                  ${femalePrice.toLocaleString()}
                 </p>
               </div>
             </div>

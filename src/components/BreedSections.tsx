@@ -5,6 +5,7 @@ import { PawPrint, X, Heart, ChevronLeft, ChevronRight } from "lucide-react";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { Variants } from "framer-motion"
+import { useBreeds } from "@/hooks/useBreeds";
 
 
 const cardVariants: Variants = {
@@ -238,6 +239,29 @@ const ClientesModal = ({
 
 const BreedSections = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const { breeds, loading } = useBreeds();
+
+  // Agrupar razas por categoría con sus detalles
+  const categoriesMap = new Map();
+  
+  breeds.forEach((breed) => {
+    if (!categoriesMap.has(breed.categoryId)) {
+      categoriesMap.set(breed.categoryId, {
+        id: breed.categoryId,
+        name: breed.category.name,
+        slug: breed.category.slug,
+        description: breed.category.description,
+      });
+    }
+  });
+
+  const categories = Array.from(categoriesMap.values()).sort((a, b) => {
+    // Orden específico: pequeñas, medianas, grandes
+    const order = { pequenas: 0, medianas: 1, grandes: 2 };
+    const aOrder = order[a.slug as keyof typeof order] ?? 999;
+    const bOrder = order[b.slug as keyof typeof order] ?? 999;
+    return aOrder - bOrder;
+  });
 
   return (
     <>
@@ -246,26 +270,23 @@ const BreedSections = () => {
           Explora por Tamaño
         </h2>
 
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
-          <BreedCard
-            href="/razas/pequenas"
-            imgSrc="/razas paqueñas/IMG-20250422-WA0128.jpg"
-            title="Razas Pequeñas"
-            description="Perfectas para espacios pequeños y llenas de ternura."
-          />
-          <BreedCard
-            href="/razas/medianas"
-            imgSrc="/razas-medianas/IMG-20250423-WA0015.jpg"
-            title="Razas Medianas"
-            description="Equilibradas y versátiles, ideales para la familia."
-          />
-          <BreedCard
-            href="/razas/grandes"
-            imgSrc="/grande.jpg"
-            title="Razas Grandes"
-            description="Majestuosas, protectoras y llenas de energía."
-          />
-        </div>
+        {loading ? (
+          <div className="max-w-6xl mx-auto text-center text-zinc-400">
+            <p>Cargando categorías...</p>
+          </div>
+        ) : (
+          <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
+            {categories.map((category) => (
+              <BreedCard
+                key={category.id}
+                href={`/razas/${category.slug}`}
+                imgSrc={category.image || "/placeholder.jpg"}
+                title={category.name}
+                description={category.description || "Explora esta categoría de razas"}
+              />
+            ))}
+          </div>
+        )}
 
         {/* Card de Clientes Satisfechos */}
         <motion.div

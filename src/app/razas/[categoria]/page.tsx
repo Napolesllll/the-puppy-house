@@ -2,12 +2,6 @@
 
 import { useEffect, useState, lazy, Suspense } from "react";
 import { useParams, useRouter } from "next/navigation";
-import {
-  smallBreeds,
-  mediumBreeds,
-  largeBreeds,
-  type Breed,
-} from "@/data/breeds";
 import Image from "next/image";
 import Link from "next/link";
 import { PawPrint, ArrowLeft } from "lucide-react";
@@ -17,18 +11,30 @@ import React from "react";
 // Lazy loading del modal y swiper solo cuando se necesiten
 const LazyModal = lazy(() => import("@/components/BreedModal"));
 
-const getBreedsByCategory = (category: string): Breed[] => {
-  switch (category) {
-    case "pequenas":
-      return smallBreeds;
-    case "medianas":
-      return mediumBreeds;
-    case "grandes":
-      return largeBreeds;
-    default:
-      return [];
-  }
-};
+// Interfaz para las razas desde la BD
+interface Breed {
+  id: string;
+  name: string;
+  description: string;
+  image: string;
+  desde?: string;
+  categoryId: string;
+  category: {
+    id: string;
+    name: string;
+    slug: string;
+  };
+  prices?: Array<{
+    id: string;
+    malePrice: number;
+    femalePrice: number;
+  }>;
+  images?: Array<{
+    id: string;
+    url: string;
+    order: number;
+  }>;
+}
 
 const vividColors = ["#ff6b81", "#ff9f43", "#48dbfb", "#1dd1a1", "#f368e0"];
 
@@ -138,14 +144,45 @@ export default function RazaPage() {
   const [breeds, setBreeds] = useState<Breed[]>([]);
   const [selectedBreed, setSelectedBreed] = useState<Breed | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const data = getBreedsByCategory(categoria);
-    if (data.length === 0) {
-      router.push("/not-found");
-    } else {
-      setBreeds(data);
-    }
+    const fetchBreedsByCategory = async () => {
+      try {
+        setLoading(true);
+        setError(null);
+        
+        // Obtener todas las categorías para encontrar el ID por slug
+        const categoriesRes = await fetch("/api/admin/categories");
+        const categories = await categoriesRes.json();
+        
+        const category = categories.find((cat: any) => cat.slug === categoria);
+        
+        if (!category) {
+          setError("Categoría no encontrada");
+          router.push("/not-found");
+          return;
+        }
+        
+        // Obtener razas filtradas por categoría
+        const breedsRes = await fetch(`/api/admin/breeds?categoryId=${category.id}`);
+        const breedsData = await breedsRes.json();
+        
+        if (!breedsData || breedsData.length === 0) {
+          setError("No hay razas en esta categoría");
+        }
+        
+        setBreeds(breedsData);
+      } catch (err) {
+        console.error("Error fetching breeds:", err);
+        setError("Error al cargar las razas");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchBreedsByCategory();
   }, [categoria, router]);
 
   useEffect(() => {
@@ -191,11 +228,25 @@ export default function RazaPage() {
           🐾 Razas {categoria}
         </h1>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto z-10 relative">
-          {breeds.map((breed) => (
-            <BreedCard key={breed.name} breed={breed} onOpenModal={openModal} />
-          ))}
-        </div>
+        {loading ? (
+          <div className="flex justify-center items-center py-20">
+            <p className="text-xl text-zinc-400">Cargando razas...</p>
+          </div>
+        ) : error ? (
+          <div className="flex justify-center items-center py-20">
+            <p className="text-xl text-red-400">{error}</p>
+          </div>
+        ) : breeds.length === 0 ? (
+          <div className="flex justify-center items-center py-20">
+            <p className="text-xl text-zinc-400">No hay razas en esta categoría</p>
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto z-10 relative">
+            {breeds.map((breed) => (
+              <BreedCard key={breed.id} breed={breed} onOpenModal={openModal} />
+            ))}
+          </div>
+        )}
 
         {/* Modal con lazy loading */}
         {isModalOpen && selectedBreed && (

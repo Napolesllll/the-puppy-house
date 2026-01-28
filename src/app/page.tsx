@@ -8,6 +8,7 @@ const HomeHero = lazy(() => import("@/components/HomeHero"));
 const SectionDivider = lazy(() => import("@/components/UI/SectionDivider"));
 const SobreNosotros = lazy(() => import("@/components/SobreNosotros"));
 const BreedSections = lazy(() => import("@/components/BreedSections"));
+const PaymentMethods = lazy(() => import("@/components/PaymentMethods"));
 const Contactanos = lazy(() => import("@/components/Contactanos"));
 const ClientesFelices = lazy(() => import("@/components/ClientesFelices"));
 
@@ -25,6 +26,7 @@ export default function Home() {
             <section id="razas">
               <BreedSections />
             </section>
+            <PaymentMethods />
           </section>
         );
       case "sobre":
@@ -53,6 +55,7 @@ export default function Home() {
             <section id="razas">
               <BreedSections />
             </section>
+            <PaymentMethods />
           </section>
         );
     }
