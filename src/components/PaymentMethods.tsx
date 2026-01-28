@@ -9,11 +9,11 @@ const PaymentMethods = () => {
     {
       id: 1,
       name: "Mercado Pago",
-      logo: "https://res.cloudinary.com/dtv1tsjwa/image/upload/v1704912000/mercadopago_color.png",
+      logo: "https://static.wikia.nocookie.net/logopedia/images/7/79/Logotipo_de_Mercado_Pago_alternativo.svg/revision/latest/scale-to-width-down/250?cb=20250802020358&path-prefix=es",
       description: "Billetera digital segura y rápida",
-      color: "from-yellow-500 to-amber-400",
-      borderColor: "border-yellow-500",
-      glowColor: "shadow-yellow-500/50",
+      color: "from-blue-500 to-cyan-400",
+      borderColor: "border-blue-500",
+      glowColor: "shadow-blue-500/50",
       bgLogo: "bg-white",
       logoFilter: "",
       features: ["Aceptamos Visa", "Aceptamos Mastercard", "Protección de comprador"],
@@ -41,6 +41,63 @@ const PaymentMethods = () => {
       },
     },
   };
+
+  const paymentLogos = [
+    {
+      name: "Visa",
+      src: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/2560px-Visa_Inc._logo.svg.png",
+      bgColor: "from-blue-600/20 to-blue-400/20",
+      borderColor: "border-blue-500/30",
+      hoverBorder: "hover:border-blue-500/60",
+      shadowColor: "hover:shadow-blue-500/20",
+      filter: "filter brightness-0 invert",
+    },
+    {
+      name: "Mastercard",
+      src: "https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg",
+      bgColor: "bg-white",
+      borderColor: "border-red-500/30",
+      hoverBorder: "hover:border-red-500/60",
+      shadowColor: "hover:shadow-red-500/20",
+      filter: "",
+    },
+    {
+      name: "Mercado Pago",
+      src: "https://static.wikia.nocookie.net/logopedia/images/7/79/Logotipo_de_Mercado_Pago_alternativo.svg/revision/latest/scale-to-width-down/250?cb=20250802020358&path-prefix=es",
+      bgColor: "bg-white",
+      borderColor: "border-yellow-500/30",
+      hoverBorder: "hover:border-yellow-500/60",
+      shadowColor: "hover:shadow-yellow-500/20",
+      filter: "",
+    },
+    {
+      name: "Efecty",
+      src: "https://armmonias.com/wp-content/uploads/2025/01/Efecty-min.png",
+      bgColor: "bg-white",
+      borderColor: "border-orange-500/30",
+      hoverBorder: "hover:border-orange-500/60",
+      shadowColor: "hover:shadow-orange-500/20",
+      filter: "",
+    },
+    {
+      name: "Bancolombia",
+      src: "https://vectorseek.com/wp-content/uploads/2023/09/Bancolombia-Icon-Logo-Vector.svg-.png",
+      bgColor: "bg-white",
+      borderColor: "border-yellow-600/30",
+      hoverBorder: "hover:border-yellow-600/60",
+      shadowColor: "hover:shadow-yellow-600/20",
+      filter: "",
+    },
+    {
+      name: "PSE",
+      src: "https://www.cootransmede.com/wp-content/uploads/2022/02/logo-pse-300x300-1.png",
+      bgColor: "bg-white",
+      borderColor: "border-green-500/30",
+      hoverBorder: "hover:border-green-500/60",
+      shadowColor: "hover:shadow-green-500/20",
+      filter: "",
+    },
+  ];
 
   return (
     <section className="relative py-28 px-6 overflow-hidden">
@@ -93,58 +150,63 @@ const PaymentMethods = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="flex items-center justify-center gap-12 mb-24 px-6"
         >
-          <div className="text-center">
+          <div className="text-center w-full">
             <p className="text-xs text-zinc-400 uppercase tracking-widest mb-4">Aceptamos</p>
-            <div className="flex items-center justify-center gap-8">
-              {/* Visa Logo */}
-              <motion.div
-                whileHover={{ scale: 1.2, y: -5 }}
-                transition={{ duration: 0.3 }}
-                className="relative"
-              >
-                <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-blue-600/20 to-blue-400/20 border border-blue-500/30 flex items-center justify-center backdrop-blur-sm hover:border-blue-500/60 transition-all duration-300 shadow-lg hover:shadow-blue-500/20">
-                  <Image
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/2560px-Visa_Inc._logo.svg.png"
-                    alt="Visa"
-                    width={40}
-                    height={40}
-                    className="object-contain filter brightness-0 invert"
-                  />
-                </div>
-              </motion.div>
+            
+            {/* Desktop - Sin animación */}
+            <div className="hidden lg:flex items-center justify-center gap-8">
+              {paymentLogos.map((logo, index) => (
+                <motion.div
+                  key={`desktop-${index}`}
+                  whileHover={{ scale: 1.2, y: -5 }}
+                  transition={{ duration: 0.3 }}
+                  className="relative"
+                >
+                  <div className={`w-16 h-16 rounded-xl bg-gradient-to-br ${logo.bgColor} border ${logo.borderColor} flex items-center justify-center backdrop-blur-sm ${logo.hoverBorder} transition-all duration-300 shadow-lg ${logo.shadowColor}`}>
+                    <Image
+                      src={logo.src}
+                      alt={logo.name}
+                      width={40}
+                      height={40}
+                      className={`object-contain ${logo.filter}`}
+                    />
+                  </div>
+                </motion.div>
+              ))}
+            </div>
 
-              {/* Mastercard Logo */}
+            {/* Mobile/Tablet - Con animación */}
+            <div className="lg:hidden relative w-full overflow-hidden">
               <motion.div
-                whileHover={{ scale: 1.2, y: -5 }}
-                transition={{ duration: 0.3 }}
-                className="relative"
+                className="flex items-center gap-8"
+                animate={{
+                  x: [0, -((paymentLogos.length * 96) / 2)],
+                }}
+                transition={{
+                  duration: 15,
+                  repeat: Infinity,
+                  repeatType: "reverse",
+                  ease: "linear",
+                }}
               >
-                <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-red-600/20 to-orange-500/20 border border-red-500/30 flex items-center justify-center backdrop-blur-sm hover:border-red-500/60 transition-all duration-300 shadow-lg hover:shadow-red-500/20">
-                  <Image
-                    src="https://upload.wikimedia.org/wikipedia/commons/a/b7/Mastercard_logo.svg"
-                    alt="Mastercard"
-                    width={40}
-                    height={40}
-                    className="object-contain"
-                  />
-                </div>
-              </motion.div>
-
-              {/* Mercado Pago Logo */}
-              <motion.div
-                whileHover={{ scale: 1.2, y: -5 }}
-                transition={{ duration: 0.3 }}
-                className="relative"
-              >
-                <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-yellow-500/20 to-amber-400/20 border border-yellow-500/30 flex items-center justify-center backdrop-blur-sm hover:border-yellow-500/60 transition-all duration-300 shadow-lg hover:shadow-yellow-500/20">
-                  <Image
-                    src="https://res.cloudinary.com/dtv1tsjwa/image/upload/v1704912000/mercadopago_color.png"
-                    alt="Mercado Pago"
-                    width={40}
-                    height={40}
-                    className="object-contain"
-                  />
-                </div>
+                {[...paymentLogos, ...paymentLogos].map((logo, index) => (
+                  <motion.div
+                    key={`mobile-${index}`}
+                    whileHover={{ scale: 1.2, y: -5 }}
+                    transition={{ duration: 0.3 }}
+                    className="relative flex-shrink-0"
+                  >
+                    <div className={`w-16 h-16 rounded-xl bg-gradient-to-br ${logo.bgColor} border ${logo.borderColor} flex items-center justify-center backdrop-blur-sm ${logo.hoverBorder} transition-all duration-300 shadow-lg ${logo.shadowColor}`}>
+                      <Image
+                        src={logo.src}
+                        alt={logo.name}
+                        width={40}
+                        height={40}
+                        className={`object-contain ${logo.filter}`}
+                      />
+                    </div>
+                  </motion.div>
+                ))}
               </motion.div>
             </div>
           </div>
@@ -215,24 +277,25 @@ const PaymentMethods = () => {
                         transition={{ delay: 0.1 * idx }}
                         className="flex items-center gap-3"
                       >
-                        <CheckCircle size={16} className="text-amber-400 flex-shrink-0" />
+                        <CheckCircle size={16} className="text-blue-400 flex-shrink-0" />
                         <span className="text-sm text-zinc-300">{feature}</span>
                       </motion.div>
                     ))}
                   </div>
 
                   {/* Security badge */}
-                  <div className="flex items-center gap-2 mb-8 px-3 py-2 bg-amber-900/20 rounded-lg border border-amber-500/30">
-                    <Shield size={14} className="text-amber-400 flex-shrink-0" />
-                    <span className="text-xs font-semibold text-amber-300 uppercase tracking-wider">
+                  <div className="flex items-center gap-2 mb-8 px-3 py-2 bg-blue-900/20 rounded-lg border border-blue-500/30">
+                    <Shield size={14} className="text-blue-400 flex-shrink-0" />
+                    <span className="text-xs font-semibold text-blue-300 uppercase tracking-wider">
                       Certificado y verificado
                     </span>
                   </div>
 
                   {/* Premium CTA Button */}
                   <motion.button
-                    whileHover={{ scale: 1.05, boxShadow: `0 20px 40px rgba(217, 119, 6, 0.4)` }}
+                    whileHover={{ scale: 1.05, boxShadow: `0 20px 40px rgba(59, 130, 246, 0.4)` }}
                     whileTap={{ scale: 0.95 }}
+                    onClick={() => window.location.href = 'https://link.mercadopago.com.co/jeanpierremartinez'}
                     className={`w-full py-4 rounded-xl bg-gradient-to-r ${method.color} text-white font-bold text-sm uppercase tracking-[0.1em] transition-all duration-300 shadow-lg hover:shadow-2xl relative overflow-hidden group/btn`}
                   >
                     <span className="relative z-10 flex items-center justify-center gap-2">
