@@ -173,7 +173,14 @@ export default function RazaPage() {
           setError("No hay razas en esta categoría");
         }
         
-        setBreeds(breedsData);
+        // Ordenar razas: Pomerania primero, luego el resto alfabéticamente
+        const sortedBreeds = breedsData.sort((a: Breed, b: Breed) => {
+          if (a.name.toLowerCase().includes('pomerania')) return -1;
+          if (b.name.toLowerCase().includes('pomerania')) return 1;
+          return a.name.localeCompare(b.name);
+        });
+        
+        setBreeds(sortedBreeds);
       } catch (err) {
         console.error("Error fetching breeds:", err);
         setError("Error al cargar las razas");

@@ -709,11 +709,11 @@ export default function BreedsAdmin() {
                 <div className="bg-white/5 p-4 rounded-lg border border-white/10">
                   <div className="flex items-center justify-between mb-4">
                     <h3 className="font-semibold">
-                      Galería (Máx. 10 imágenes) - {formData.images.length}/10
+                      Galería (Máx. 20 imágenes) - {formData.images.length}/20
                     </h3>
                   </div>
 
-                  {formData.images.length < 10 && (
+                  {formData.images.length < 20 && (
                     <div className="mb-4">
                       <input
                         type="file"
