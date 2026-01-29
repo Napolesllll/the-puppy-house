@@ -11,7 +11,7 @@ const LoadingScreen = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsVisible(false);
-    }, 6500);
+    }, 3000);
 
     const handleLoad = () => setIsVisible(false);
     window.addEventListener("load", handleLoad);
