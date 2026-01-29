@@ -46,26 +46,34 @@ const Nav = ({
 
   return (
     <nav
-      className={`bg-black text-white fixed top-0 left-0 right-0 w-full shadow-md transition-all overflow-hidden ${
+      className={`bg-gradient-to-b from-black via-zinc-900 to-black text-white fixed top-0 left-0 right-0 w-full shadow-2xl shadow-red-900/50 transition-all overflow-hidden border-b border-red-500/30 ${
         isModalOpen ? "z-10" : "z-50"
-      }`} // Agregado right-0 y overflow-hidden
+      }`}
       aria-label="Navegación principal"
     >
-      {/* Huellitas escritorio */}
+      {/* Animated top glow line */}
+      <motion.div
+        className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-red-500 to-transparent"
+        animate={{ opacity: [0.3, 0.8, 0.3] }}
+        transition={{ duration: 3, repeat: Infinity }}
+      />
+
+      {/* Huellitas escritorio con glow */}
       <div className="absolute inset-0 hidden md:block pointer-events-none z-0 overflow-hidden">
         {pawprints.map((paw) => (
           <motion.div
             key={paw.id}
-            className="absolute opacity-10"
+            className="absolute text-red-500/30"
             style={{
               top: `${paw.top}%`,
               left: `${paw.left}%`,
               fontSize: `${paw.size}px`,
               transform: `rotate(${paw.rotation}deg)`,
+              filter: "blur(0.5px)",
             }}
             initial={{ opacity: 0 }}
-            animate={{ opacity: 0.1 }}
-            transition={{ duration: 2 }}
+            animate={{ opacity: [0.1, 0.25, 0.1] }}
+            transition={{ duration: 4, repeat: Infinity, delay: Math.random() * 2 }}
           >
             🐾
           </motion.div>
@@ -73,60 +81,100 @@ const Nav = ({
       </div>
 
       {/* Contenido principal */}
-      <div className="relative z-10 max-w-full mx-auto px-4 py-4 flex items-center justify-between overflow-hidden">
-        <div className="flex-shrink-0">
+      <div className="relative z-10 max-w-full mx-auto px-4 py-3 sm:px-6 sm:py-4 flex items-center justify-between overflow-hidden">
+        {/* Logo con efecto luxury */}
+        <motion.div 
+          className="flex-shrink-0"
+          whileHover={{ scale: 1.05 }}
+        >
           <button
             onClick={() => onNavigate("inicio")}
             aria-label="Ir al inicio"
+            className="relative group"
           >
+            {/* Glow effect behind logo */}
+            <motion.div
+              className="absolute -inset-2 bg-red-500/20 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity"
+            />
+            
             <motion.div
               animate={{ rotate: [0, 10, -10, 0] }}
               transition={{ duration: 1, repeat: Infinity, repeatType: "loop" }}
+              className="relative"
             >
               <Image
                 src="/LOGO.png"
                 alt="Logo Mascoticas"
                 width={150}
                 height={50}
+                className="drop-shadow-lg"
               />
             </motion.div>
           </button>
-        </div>
+        </motion.div>
 
-        {/* Menú de escritorio */}
-        <ul className="hidden md:flex space-x-6 flex-shrink-0">
+        {/* Menú de escritorio con estilo luxury */}
+        <ul className="hidden md:flex space-x-2 flex-shrink-0">
           {[
-            { id: "inicio", label: "Inicio" },
-            { id: "sobre", label: "Sobre Nosotros" },
-            { id: "contacto", label: "Contáctanos" },
-            { id: "clientes", label: "Clientes Felices" },
+            { id: "inicio", label: "Inicio", icon: "🏠" },
+            { id: "sobre", label: "Sobre Nosotros", icon: "💝" },
+            { id: "contacto", label: "Contáctanos", icon: "📞" },
+            { id: "clientes", label: "Clientes Felices", icon: "⭐" },
           ].map((item) => (
-            <li key={item.id}>
-              <button
+            <motion.li 
+              key={item.id}
+              whileHover={{ y: -2 }}
+            >
+              <motion.button
                 onClick={() => onNavigate(item.id as Section)}
-                className={`hover:bg-red-600 px-4 py-2 rounded-md transition-colors whitespace-nowrap ${
-                  currentSection === item.id ? "bg-red-600" : ""
+                className={`relative px-5 py-2.5 rounded-xl font-semibold transition-all text-sm flex items-center gap-2 ${
+                  currentSection === item.id
+                    ? "bg-gradient-to-r from-red-600 to-red-500 text-white shadow-lg shadow-red-500/40"
+                    : "text-white/80 hover:text-white"
                 }`}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
-                {item.label}
-              </button>
-            </li>
+                {/* Subtle background for inactive items */}
+                {currentSection !== item.id && (
+                  <motion.div
+                    className="absolute inset-0 bg-red-600/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity"
+                    whileHover={{ opacity: 0.2 }}
+                  />
+                )}
+                
+                <span className="relative z-10 text-lg">{item.icon}</span>
+                <span className="relative z-10">{item.label}</span>
+
+                {/* Animated underline for active */}
+                {currentSection === item.id && (
+                  <motion.div
+                    layoutId="navUnderline"
+                    className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-red-300 to-red-600 rounded-full"
+                    transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                  />
+                )}
+              </motion.button>
+            </motion.li>
           ))}
         </ul>
 
-        {/* Botón hamburguesa - móvil */}
-        <div className="md:hidden flex-shrink-0">
-          <button
+        {/* Botón hamburguesa - móvil con estilo */}
+        <motion.div className="md:hidden flex-shrink-0">
+          <motion.button
             onClick={toggleMenu}
             aria-label="Abrir menú móvil"
-            className="text-white p-2"
+            className="relative group p-2.5 rounded-lg hover:bg-red-600/20 transition-colors"
+            whileTap={{ scale: 0.9 }}
           >
-            <svg
+            <motion.svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
-              className="h-6 w-6"
+              className="h-6 w-6 text-red-500 group-hover:text-red-400 transition-colors"
+              animate={{ rotate: isMenuOpen ? 90 : 0 }}
+              transition={{ duration: 0.3 }}
             >
               <path
                 strokeLinecap="round"
@@ -134,9 +182,14 @@ const Nav = ({
                 strokeWidth="2"
                 d="M4 6h16M4 12h16M4 18h16"
               />
-            </svg>
-          </button>
-        </div>
+            </motion.svg>
+
+            {/* Glow effect on hover */}
+            <motion.div
+              className="absolute inset-0 bg-red-500/20 rounded-lg blur-md opacity-0 group-hover:opacity-100 transition-opacity -z-10"
+            />
+          </motion.button>
+        </motion.div>
       </div>
 
       {/* Menú móvil centrado */}
@@ -153,40 +206,56 @@ const Nav = ({
               onClick={() => setIsMenuOpen(false)}
             />
 
-            {/* Menú centrado */}
+            {/* Menú centrado con estilo luxury */}
             <motion.div
               key="mobile-menu"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.8 }}
-              transition={{ type: "spring", stiffness: 50 }}
+              initial={{ opacity: 0, scale: 0.8, y: -20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.8, y: -20 }}
+              transition={{ type: "spring", stiffness: 50, damping: 15 }}
               className="fixed inset-0 flex items-center justify-center z-50 px-4"
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="relative w-full max-w-sm bg-black text-white p-6 rounded-xl shadow-lg overflow-hidden">
-                {/* Botón cerrar */}
-                <button
+              {/* Glow background effect */}
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-b from-red-500/20 via-transparent to-red-500/10 blur-3xl"
+                animate={{ opacity: [0.3, 0.6, 0.3] }}
+                transition={{ duration: 4, repeat: Infinity }}
+              />
+
+              <div className="relative w-full max-w-sm bg-gradient-to-br from-zinc-900 via-black to-zinc-900 text-white p-8 rounded-3xl overflow-hidden border border-red-500/30 shadow-2xl shadow-red-900/50">
+                {/* Decorative top accent */}
+                <motion.div
+                  className="absolute top-0 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-transparent via-red-500 to-transparent"
+                  animate={{ opacity: [0.5, 1, 0.5] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                />
+
+                {/* Botón cerrar luxury */}
+                <motion.button
                   onClick={() => setIsMenuOpen(false)}
-                  className="absolute top-4 right-4 text-white text-2xl z-20"
+                  className="absolute top-6 right-6 text-red-500 hover:text-red-400 transition-colors z-20 text-3xl font-light"
+                  whileHover={{ rotate: 90, scale: 1.1 }}
                   aria-label="Cerrar menú"
                 >
                   ✕
-                </button>
+                </motion.button>
 
-                {/* Huellitas */}
+                {/* Huellitas con glow */}
                 <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
                   {pawprintsMobile.map((paw) => (
                     <motion.div
                       key={`mobile-${paw.id}`}
-                      className="absolute text-white"
+                      className="absolute text-red-500/40"
                       style={{
                         top: `${paw.top}%`,
                         left: `${paw.left}%`,
                         fontSize: `${paw.size}px`,
                         transform: `rotate(${paw.rotation}deg)`,
+                        filter: "blur(0.5px)",
                       }}
                       initial={{ opacity: 0 }}
-                      animate={{ opacity: [0, 0.1, 0] }}
+                      animate={{ opacity: [0, 0.15, 0], y: [0, -8, 0] }}
                       transition={{ duration: 4, repeat: Infinity }}
                     >
                       🐾
@@ -194,31 +263,70 @@ const Nav = ({
                   ))}
                 </div>
 
-                {/* Links */}
-                <ul className="relative z-10 flex flex-col items-center gap-6 mt-4 w-full">
+                {/* Logo pequeño */}
+                <motion.div
+                  className="relative z-10 flex justify-center mb-8"
+                  animate={{ y: [0, -5, 0] }}
+                  transition={{ duration: 3, repeat: Infinity }}
+                >
+                  <div className="w-16 h-16 rounded-full border-2 border-red-500/50 flex items-center justify-center">
+                    <span className="text-2xl">🐕</span>
+                  </div>
+                </motion.div>
+
+                {/* Título decorativo */}
+                <div className="relative z-10 text-center mb-8">
+                  <h2 className="text-xl font-black bg-gradient-to-r from-red-400 to-red-600 bg-clip-text text-transparent">
+                    Mascoticas
+                  </h2>
+                  <div className="flex items-center justify-center gap-2 mt-2 text-xs text-red-300/60">
+                    <span className="w-2 h-px bg-red-500/40" />
+                    <span>Tu criadero de confianza</span>
+                    <span className="w-2 h-px bg-red-500/40" />
+                  </div>
+                </div>
+
+                {/* Links con estilo luxury */}
+                <ul className="relative z-10 flex flex-col items-center gap-4 w-full">
                   {[
-                    { id: "inicio", label: "Inicio" },
-                    { id: "sobre", label: "Sobre Nosotros" },
-                    { id: "contacto", label: "Contáctanos" },
-                    { id: "clientes", label: "Clientes Felices" },
-                  ].map((item) => (
-                    <li key={item.id} className="w-full">
-                      <button
+                    { id: "inicio", label: "Inicio", icon: "🏠" },
+                    { id: "sobre", label: "Sobre Nosotros", icon: "💝" },
+                    { id: "contacto", label: "Contáctanos", icon: "📞" },
+                    { id: "clientes", label: "Clientes Felices", icon: "⭐" },
+                  ].map((item, idx) => (
+                    <motion.li 
+                      key={item.id} 
+                      className="w-full"
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: idx * 0.1 }}
+                    >
+                      <motion.button
                         onClick={() => {
                           onNavigate(item.id as Section);
                           setIsMenuOpen(false);
                         }}
-                        className={`py-2 px-4 w-full text-center rounded-md font-semibold ${
+                        className={`py-3 px-6 w-full text-center rounded-2xl font-semibold transition-all flex items-center justify-center gap-3 ${
                           currentSection === item.id
-                            ? "bg-red-600 text-white"
-                            : "bg-white text-black"
+                            ? "bg-gradient-to-r from-red-600 to-red-500 text-white shadow-lg shadow-red-500/50 border border-red-400/50"
+                            : "bg-zinc-800/50 text-white border border-zinc-700/50 hover:border-red-500/50"
                         }`}
+                        whileHover={{ scale: 1.05, y: -2 }}
+                        whileTap={{ scale: 0.95 }}
                       >
-                        {item.label}
-                      </button>
-                    </li>
+                        <span>{item.icon}</span>
+                        <span>{item.label}</span>
+                      </motion.button>
+                    </motion.li>
                   ))}
                 </ul>
+
+                {/* Decorative bottom accent */}
+                <motion.div
+                  className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-transparent via-red-500 to-transparent"
+                  animate={{ opacity: [0.5, 1, 0.5] }}
+                  transition={{ duration: 2, repeat: Infinity, delay: 1 }}
+                />
               </div>
             </motion.div>
           </>

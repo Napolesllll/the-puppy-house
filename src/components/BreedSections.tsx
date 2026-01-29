@@ -24,26 +24,53 @@ const BreedCard = ({
   imgSrc,
   title,
   description,
+  delay = 0,
 }: {
   href: string;
   imgSrc: string;
   title: string;
   description: string;
+  delay?: number;
 }) => {
   return (
     <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay }}
       whileHover="hover"
       variants={cardVariants}
-      className="rounded-2xl overflow-hidden shadow-lg bg-zinc-800 text-white cursor-pointer"
+      className="group relative rounded-2xl overflow-hidden shadow-2xl shadow-red-900/50 bg-gradient-to-br from-zinc-800 to-zinc-900 text-white cursor-pointer border border-red-500/20 hover:border-red-500/50 transition-all"
     >
+      {/* Glow effect background */}
+      <motion.div
+        className="absolute inset-0 bg-gradient-to-br from-red-600/0 via-red-500/0 to-red-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"
+      />
+
       <Link href={href}>
-        <div className="relative h-72 w-full">
-          <Image src={imgSrc} alt={title} fill className="object-cover" />
+        <div className="relative h-72 w-full overflow-hidden">
+          <Image 
+            src={imgSrc} 
+            alt={title} 
+            fill 
+            className="object-cover group-hover:scale-110 transition-transform duration-500" 
+          />
+          {/* Overlay gradient */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent group-hover:from-black/30 transition-all duration-500" />
         </div>
-        <div className="p-6 text-center">
-          <PawPrint className="mx-auto mb-2 text-white" size={32} />
-          <h3 className="text-2xl font-semibold mb-2">{title}</h3>
-          <p className="text-sm text-zinc-300">{description}</p>
+        <div className="p-6 text-center relative z-20">
+          <motion.div
+            animate={{ rotate: [0, 5, -5, 0] }}
+            transition={{ duration: 2, repeat: Infinity }}
+            className="flex justify-center mb-3"
+          >
+            <PawPrint className="text-red-500 drop-shadow-lg" size={32} />
+          </motion.div>
+          <h3 className="text-2xl font-black mb-2 bg-gradient-to-r from-red-300 via-red-400 to-red-500 bg-clip-text text-transparent">
+            {title}
+          </h3>
+          <p className="text-sm text-zinc-300 group-hover:text-zinc-100 transition-colors">
+            {description}
+          </p>
         </div>
       </Link>
     </motion.div>
@@ -266,76 +293,177 @@ const BreedSections = () => {
 
   return (
     <>
-      <section className="bg-gradient-to-b from-black to-zinc-900 py-20 px-6">
-        <h2 className="text-4xl md:text-5xl text-white font-bold text-center mb-12">
-          Explora por Tamaño
-        </h2>
-
-        {loading ? (
-          <div className="max-w-6xl mx-auto text-center text-zinc-400">
-            <p>Cargando categorías...</p>
-          </div>
-        ) : (
-          <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
-            {categories.map((category) => (
-              <BreedCard
-                key={category.id}
-                href={`/razas/${category.slug}`}
-                imgSrc={category.image || "/placeholder.jpg"}
-                title={category.name}
-                description={category.description || "Explora esta categoría de razas"}
-              />
-            ))}
-          </div>
-        )}
-
-        {/* Card de Clientes Satisfechos */}
+      <section className="relative bg-gradient-to-b from-black via-zinc-950 to-black py-20 px-6 overflow-hidden">
+        {/* Animated background orbs */}
         <motion.div
-          className="flex justify-center mt-16"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-        >
+          className="absolute top-20 -left-40 w-96 h-96 bg-red-600/20 rounded-full blur-3xl opacity-30"
+          animate={{
+            y: [0, 40, 0],
+            x: [0, 20, 0],
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+
+        <motion.div
+          className="absolute bottom-20 -right-40 w-96 h-96 bg-red-500/15 rounded-full blur-3xl opacity-30"
+          animate={{
+            y: [0, -40, 0],
+            x: [0, -20, 0],
+          }}
+          transition={{
+            duration: 10,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 1,
+          }}
+        />
+
+        {/* Animated grid background */}
+        <div className="absolute inset-0 opacity-10">
+          <svg className="w-full h-full">
+            <defs>
+              <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" strokeWidth="0.5" />
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#grid)" />
+          </svg>
+        </div>
+
+        <div className="relative z-10">
+          {/* Título con efectos */}
           <motion.div
-            whileHover="hover"
-            variants={cardVariants}
-            className="rounded-2xl overflow-hidden shadow-lg bg-zinc-800 text-white cursor-pointer max-w-sm"
-            onClick={() => setIsModalOpen(true)}
+            initial={{ opacity: 0, y: -30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
           >
-            <div className="relative h-72 w-full">
-              <Image
-                src="/clientes-felices/carousel1.jpg"
-                alt="Clientes Satisfechos"
-                fill
-                className="object-contain"
+            <motion.div
+              animate={{
+                y: [0, -8, 0],
+              }}
+              transition={{
+                duration: 3,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            >
+              <h2 className="text-5xl md:text-6xl font-black text-white mb-4 drop-shadow-lg">
+                <span className="bg-gradient-to-r from-red-300 via-red-500 to-red-700 bg-clip-text text-transparent">
+                  Explora por Tamaño
+                </span>
+              </h2>
+            </motion.div>
+
+            {/* Decorative line */}
+            <motion.div
+              className="flex items-center justify-center gap-4 mt-6"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.3 }}
+            >
+              <motion.div
+                className="w-12 h-1 bg-gradient-to-r from-transparent to-red-500"
+                animate={{ scaleX: [0, 1] }}
+                transition={{ duration: 0.8, delay: 0.5 }}
               />
-              <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-                <motion.div
-                  animate={{
-                    scale: [1, 1.1, 1],
-                  }}
-                  transition={{
-                    duration: 2,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
-                  className="text-white text-6xl"
-                >
-                  ❤️
-                </motion.div>
-              </div>
-            </div>
-            <div className="p-6 text-center">
-              <Heart className="mx-auto mb-2 text-red-500" size={32} />
-              <h3 className="text-2xl font-semibold mb-2">
-                Clientes Satisfechos
-              </h3>
-              <p className="text-sm text-zinc-300">
-                Descubre las experiencias de familias felices con sus mascotas.
-              </p>
-            </div>
+              <span className="text-red-400 font-semibold text-sm">Encuentre su compañero perfecto</span>
+              <motion.div
+                className="w-12 h-1 bg-gradient-to-l from-transparent to-red-500"
+                animate={{ scaleX: [0, 1] }}
+                transition={{ duration: 0.8, delay: 0.5 }}
+              />
+            </motion.div>
           </motion.div>
-        </motion.div>
+
+          {loading ? (
+            <div className="max-w-6xl mx-auto text-center text-zinc-400">
+              <motion.p
+                animate={{ opacity: [0.5, 1, 0.5] }}
+                transition={{ duration: 2, repeat: Infinity }}
+              >
+                Cargando categorías...
+              </motion.p>
+            </div>
+          ) : (
+            <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
+              {categories.map((category, idx) => (
+                <BreedCard
+                  key={category.id}
+                  href={`/razas/${category.slug}`}
+                  imgSrc={category.image || "/placeholder.jpg"}
+                  title={category.name}
+                  description={category.description || "Explora esta categoría de razas"}
+                  delay={idx * 0.15}
+                />
+              ))}
+            </div>
+          )}
+
+          {/* Card de Clientes Satisfechos mejorada */}
+          <motion.div
+            className="flex justify-center mt-20"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+          >
+            <motion.div
+              whileHover="hover"
+              variants={cardVariants}
+              className="group relative rounded-2xl overflow-hidden shadow-2xl shadow-red-900/60 bg-gradient-to-br from-zinc-800 to-zinc-900 text-white cursor-pointer max-w-sm border border-red-500/30 hover:border-red-500/60 transition-all"
+              onClick={() => setIsModalOpen(true)}
+            >
+              {/* Animated glow effect */}
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-br from-red-600/20 via-transparent to-red-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"
+              />
+
+              <div className="relative h-72 w-full overflow-hidden">
+                <Image
+                  src="/clientes-felices/carousel1.jpg"
+                  alt="Clientes Satisfechos"
+                  fill
+                  className="object-contain group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-500 flex items-center justify-center">
+                  <motion.div
+                    animate={{
+                      scale: [1, 1.15, 1],
+                      rotate: [0, 5, -5, 0],
+                    }}
+                    transition={{
+                      duration: 2,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                    }}
+                    className="text-6xl drop-shadow-lg"
+                  >
+                    ❤️
+                  </motion.div>
+                </div>
+              </div>
+              <div className="p-6 text-center relative z-20">
+                <motion.div
+                  animate={{ scale: [1, 1.1, 1] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                  className="mb-3"
+                >
+                  <Heart className="mx-auto text-red-500 drop-shadow-lg" size={32} />
+                </motion.div>
+                <h3 className="text-2xl font-black mb-2 bg-gradient-to-r from-red-300 to-red-500 bg-clip-text text-transparent">
+                  Clientes Satisfechos
+                </h3>
+                <p className="text-sm text-zinc-300 group-hover:text-zinc-100 transition-colors">
+                  Descubre las experiencias de familias felices con sus mascotas.
+                </p>
+              </div>
+            </motion.div>
+          </motion.div>
+        </div>
       </section>
 
       {/* Modal */}
