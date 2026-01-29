@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { usePathname } from "next/navigation";
 import Nav from "@/components/Nav";
+import LoadingScreen from "@/components/LoadingScreen";
 import DogAssistant from "@/components/DogAssistant";
 import FloatingThoughts from "@/components/FloatingThoughts";
 import WhatsappButton from "@/components/WhatsappButton";
@@ -28,6 +29,9 @@ export default function ClientRoot({
 
   return (
     <div className="flex flex-col min-h-screen">
+      {/* Loading Screen */}
+      <LoadingScreen />
+
       {/* Barra de navegación - Solo en rutas no-admin */}
       {!isAdminRoute && (
         <Nav

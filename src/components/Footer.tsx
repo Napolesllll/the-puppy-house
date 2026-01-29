@@ -162,7 +162,7 @@ export default function Footer({ currentSection, onNavigate }: FooterProps) {
               {[
                 {
                   Icon: FaTiktok,
-                  url: "https://www.tiktok.com/@mascoticasbucaramanga",
+                  url: "https://www.tiktok.com/@mascoticasbucaramedellin?_r=1&_t=ZS-93SpvqrQcJW"
                 },
               ].map((link, idx) => (
                 <motion.a
