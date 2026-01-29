@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { usePathname } from "next/navigation";
 import Nav from "@/components/Nav";
 import DogAssistant from "@/components/DogAssistant";
 import FloatingThoughts from "@/components/FloatingThoughts";
@@ -14,6 +15,10 @@ export default function ClientRoot({
 }) {
   // Estado para la sección actual
   const [currentSection, setCurrentSection] = useState<Section>("inicio");
+  const pathname = usePathname();
+
+  // No mostrar nav en rutas de admin
+  const isAdminRoute = pathname?.startsWith("/admin");
 
   const handleNavigate = (section: Section) => {
     setCurrentSection(section);
@@ -23,12 +28,14 @@ export default function ClientRoot({
 
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Barra de navegación */}
-      <Nav
-        currentSection={currentSection}
-        onNavigate={handleNavigate}
-        isModalOpen={false} // Pasar un valor fijo si no se utiliza
-      />
+      {/* Barra de navegación - Solo en rutas no-admin */}
+      {!isAdminRoute && (
+        <Nav
+          currentSection={currentSection}
+          onNavigate={handleNavigate}
+          isModalOpen={false} // Pasar un valor fijo si no se utiliza
+        />
+      )}
 
       {/* Contenido principal */}
       <main className="flex-grow">{children}</main>

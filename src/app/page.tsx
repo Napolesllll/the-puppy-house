@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 
 const HomeHero = lazy(() => import("@/components/HomeHero"));
 const SectionDivider = lazy(() => import("@/components/UI/SectionDivider"));
+const Promociones = lazy(() => import("@/components/Promotions"));
 const SobreNosotros = lazy(() => import("@/components/SobreNosotros"));
 const BreedSections = lazy(() => import("@/components/BreedSections"));
 const PaymentMethods = lazy(() => import("@/components/PaymentMethods"));
@@ -13,7 +14,6 @@ const Contactanos = lazy(() => import("@/components/Contactanos"));
 const ClientesFelices = lazy(() => import("@/components/ClientesFelices"));
 
 export default function Home() {
-  // Usa typeof Section si Section es un valor
   const [currentSection, setCurrentSection] = useState<"inicio" | "sobre" | "contacto" | "clientes">("inicio");
 
   const renderSection = () => {
@@ -23,6 +23,7 @@ export default function Home() {
           <section id="inicio">
             <HomeHero />
             <SectionDivider />
+            <Promociones />
             <section id="razas">
               <BreedSections />
             </section>
@@ -52,6 +53,7 @@ export default function Home() {
           <section id="inicio">
             <HomeHero />
             <SectionDivider />
+            <Promociones />
             <section id="razas">
               <BreedSections />
             </section>

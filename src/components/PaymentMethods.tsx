@@ -65,9 +65,9 @@ const PaymentMethods = () => {
       name: "Mercado Pago",
       src: "https://static.wikia.nocookie.net/logopedia/images/7/79/Logotipo_de_Mercado_Pago_alternativo.svg/revision/latest/scale-to-width-down/250?cb=20250802020358&path-prefix=es",
       bgColor: "bg-white",
-      borderColor: "border-yellow-500/30",
-      hoverBorder: "hover:border-yellow-500/60",
-      shadowColor: "hover:shadow-yellow-500/20",
+      borderColor: "border-red-500/30",
+      hoverBorder: "hover:border-red-500/60",
+      shadowColor: "hover:shadow-red-500/20",
       filter: "",
     },
     {
@@ -83,9 +83,9 @@ const PaymentMethods = () => {
       name: "Bancolombia",
       src: "https://vectorseek.com/wp-content/uploads/2023/09/Bancolombia-Icon-Logo-Vector.svg-.png",
       bgColor: "bg-white",
-      borderColor: "border-yellow-600/30",
-      hoverBorder: "hover:border-yellow-600/60",
-      shadowColor: "hover:shadow-yellow-600/20",
+      borderColor: "border-red-600/30",
+      hoverBorder: "hover:border-red-600/60",
+      shadowColor: "hover:shadow-red-600/20",
       filter: "",
     },
     {
@@ -103,13 +103,13 @@ const PaymentMethods = () => {
     <section className="relative py-28 px-6 overflow-hidden">
       {/* Premium background */}
       <div className="absolute inset-0 bg-gradient-to-b from-zinc-950 via-black to-zinc-950">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(217,119,6,0.2),rgba(217,119,6,0))]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_120%,rgba(217,119,6,0.15),rgba(217,119,6,0))]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(239,68,68,0.2),rgba(239,68,68,0))]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_120%,rgba(239,68,68,0.15),rgba(239,68,68,0))]" />
       </div>
 
       {/* Decorative elements */}
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-amber-500/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-amber-600/5 rounded-full blur-3xl" />
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-red-500/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-red-600/5 rounded-full blur-3xl" />
 
       <div className="relative max-w-7xl mx-auto">
         {/* Header section */}
@@ -121,17 +121,17 @@ const PaymentMethods = () => {
           className="text-center mb-24"
         >
           <div className="flex items-center justify-center gap-2 mb-6">
-            <div className="h-1 w-12 bg-gradient-to-r from-transparent to-amber-500" />
-            <span className="text-sm font-semibold text-amber-400 uppercase tracking-[0.15em]">
+            <div className="h-1 w-12 bg-gradient-to-r from-transparent to-red-500" />
+            <span className="text-sm font-semibold text-red-400 uppercase tracking-[0.15em]">
               Métodos de Pago
             </span>
-            <div className="h-1 w-12 bg-gradient-to-l from-transparent to-amber-500" />
+            <div className="h-1 w-12 bg-gradient-to-l from-transparent to-red-500" />
           </div>
           
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-black mb-8 bg-gradient-to-r from-amber-50 via-white to-amber-100 bg-clip-text text-transparent leading-tight">
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-black mb-8 bg-gradient-to-r from-red-50 via-white to-red-100 bg-clip-text text-transparent leading-tight">
             Formas de Pago
             <br />
-            <span className="text-transparent bg-gradient-to-r from-amber-400 to-amber-600 bg-clip-text">
+            <span className="text-transparent bg-gradient-to-r from-red-400 to-red-600 bg-clip-text">
               Seguras y Confiables
             </span>
           </h2>

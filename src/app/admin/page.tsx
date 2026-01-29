@@ -9,7 +9,7 @@ import { ChevronRight, PawPrint, LogOut } from "lucide-react";
 
 const AdminDashboard = () => {
   const router = useRouter();
-  const [activeSection, setActiveSection] = useState<"categories" | "breeds">(
+  const [activeSection, setActiveSection] = useState<"categories" | "breeds" | "promotions">(
     "categories"
   );
 
@@ -25,6 +25,12 @@ const AdminDashboard = () => {
       label: "Razas",
       icon: "🐕",
       description: "Gestiona las razas y sus datos",
+    },
+    {
+      id: "promotions" as const,
+      label: "Promociones",
+      icon: "🎁",
+      description: "Gestiona ofertas y promociones especiales",
     },
   ];
 
@@ -74,7 +80,7 @@ const AdminDashboard = () => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="grid md:grid-cols-2 gap-6 mb-12"
+          className="grid md:grid-cols-3 gap-6 mb-12"
         >
           {menuItems.map((item) => (
             <motion.button
@@ -119,6 +125,15 @@ const AdminDashboard = () => {
               <AdminSectionCard
                 title="Gestión de Razas"
                 description="Administra todas las razas, precios e imágenes"
+              />
+            </Link>
+          )}
+
+          {activeSection === "promotions" && (
+            <Link href="/admin/promotions">
+              <AdminSectionCard
+                title="Gestión de Promociones"
+                description="Crea y administra ofertas especiales y descuentos"
               />
             </Link>
           )}

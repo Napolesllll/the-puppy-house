@@ -43,6 +43,7 @@ model Breed {
 
   prices      BreedPrice[]
   images      BreedImage[]
+  promotions  Promotion[]
 
   @@map("breeds")
 }
@@ -73,6 +74,30 @@ model BreedImage {
   breed     Breed    @relation(fields: [breedId], references: [id], onDelete: Cascade)
 
   @@map("breed_images")
+}
+
+// ===== MODELO PARA PROMOCIONES =====
+
+model Promotion {
+  id          String   @id @default(cuid())
+  title       String   // Título de la promoción
+  description String   // Descripción de la promoción
+  discount    Int      // Porcentaje de descuento (ej: 20 para 20%)
+  image       String   // Imagen de la promoción
+  badge       String?  // Badge opcional (NUEVO, HOT, LIMITADO, etc.)
+  startDate   DateTime // Fecha de inicio
+  endDate     DateTime // Fecha de fin
+  isActive    Boolean  @default(true) // Si está activa o no
+  isFeatured  Boolean  @default(false) // Destacada en la página principal
+  order       Int      @default(0) // Orden de aparición
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relaciones
+  breedId     String?
+  breed       Breed?   @relation(fields: [breedId], references: [id], onDelete: Cascade)
+
+  @@map("promotions")
 }
 
 // ===== MODELOS PARA ADMINISTRACIÓN =====
