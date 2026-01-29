@@ -7,7 +7,7 @@ import { Analytics } from "@vercel/analytics/react";
 const inter = Inter({ subsets: ["latin"] });
 
 // Variables de configuración (reemplazar con valores reales)
-const SITE_URL = "https://mascoticastudominio.com"; // Cambiar por tu dominio
+const SITE_URL = "https://mascoticasbucaramangamedellin.com"; // Cambiar por tu dominio
 const GA_ID = "G-XXXXXXXXXX"; // Cambiar por tu ID de Google Analytics
 const VERIFICATION_CODE = ""; // Agregar código de verificación de Google Search Console
 
@@ -35,14 +35,13 @@ export const metadata: Metadata = {
     "cachorros vacunados Medellín",
     "garantía sanitaria mascotas",
   ].join(", "),
-  authors: [{ name: "Mascoticas Medellín", url: SITE_URL }],
+  authors: [{ name: "Jhon Cano", url: SITE_URL }],
   creator: "Mascoticas Medellín - Criadero Certificado",
   publisher: "Mascoticas Medellín",
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
+formatDetection: {
+  email: false,
+  telephone: false,
+},
   robots: {
     index: true,
     follow: true,
@@ -110,7 +109,7 @@ const organizationSchema = {
   // Información de contacto y ubicación
   address: {
     "@type": "PostalAddress",
-    streetAddress: "Tu dirección específica", // Actualizar
+    streetAddress: "Bello Antioquia", // Actualizar
     addressLocality: "Bello",
     addressRegion: "Antioquia",
     postalCode: "051053",
@@ -123,9 +122,9 @@ const organizationSchema = {
   },
 
   // Información comercial
-  telephone: "+57-300-123-4567", // Actualizar con número real
+  telephone: "+57-316-316-9143", // Actualizar con número real
   email: "info@mascoticastmedellin.com", // Actualizar
-  priceRange: "$500.000 - $3.000.000",
+  priceRange: "$1.000.000 - $3.000.000",
   currenciesAccepted: "COP",
   paymentAccepted: ["Cash", "Credit Card", "Bank Transfer", "PSE"],
 
@@ -196,6 +195,8 @@ const organizationSchema = {
   // Redes sociales
   sameAs: [
     // Descomentar y actualizar con tus redes reales
+    "https://www.tiktok.com/@mascoticasbucaramedellin?_r=1&_t=ZS-93SpvqrQcJW",
+    "https://www.instagram.com/mascoticasbucaramanga_medellin/",
     // "https://www.facebook.com/MascoticanMedellin",
     // "https://www.instagram.com/mascoticastmedellin",
     // "https://wa.me/573001234567"
