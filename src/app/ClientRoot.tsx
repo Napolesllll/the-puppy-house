@@ -18,8 +18,10 @@ export default function ClientRoot({
   const [currentSection, setCurrentSection] = useState<Section>("inicio");
   const pathname = usePathname();
 
-  // No mostrar nav en rutas de admin
+  // No mostrar nav en rutas de admin y en rutas de razas
   const isAdminRoute = pathname?.startsWith("/admin");
+  const isBreedRoute = pathname?.startsWith("/razas");
+  const shouldShowNav = !isAdminRoute && !isBreedRoute;
 
   const handleNavigate = (section: Section) => {
     setCurrentSection(section);
@@ -32,8 +34,8 @@ export default function ClientRoot({
       {/* Loading Screen */}
       <LoadingScreen />
 
-      {/* Barra de navegación - Solo en rutas no-admin */}
-      {!isAdminRoute && (
+      {/* Barra de navegación - Solo en rutas no-admin y no-razas específicas */}
+      {shouldShowNav && (
         <Nav
           currentSection={currentSection}
           onNavigate={handleNavigate}

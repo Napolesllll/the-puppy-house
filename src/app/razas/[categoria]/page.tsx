@@ -215,12 +215,6 @@ export default function RazaPage() {
 
   return (
     <>
-      <Nav
-        currentSection="inicio"
-        onNavigate={(section) => console.log(`Navegando a ${section}`)}
-        isModalOpen={isModalOpen}
-      />
-
       <section className="relative pt-28 px-4 pb-16 bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900 text-white overflow-hidden min-h-screen z-10">
         <FloatingPaws />
 
