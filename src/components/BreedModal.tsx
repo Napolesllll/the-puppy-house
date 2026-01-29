@@ -84,9 +84,9 @@ const BreedModal = ({ breed, onClose }: BreedModalProps) => {
             </div>
           </div>
 
-          <div className="bg-white/5 p-3 md:p-4 rounded-xl border border-amber-400/20 space-y-3">
+          <div className="bg-white/5 p-2 md:p-3 rounded-xl border border-amber-400/20 space-y-2">
             {breed.desde && (
-              <p className="text-xs md:text-sm text-amber-300 text-center font-medium">
+              <p className="text-lg md:text-xl text-amber-400 text-center font-bold">
                 {breed.desde}
               </p>
             )}
@@ -117,7 +117,7 @@ const BreedModal = ({ breed, onClose }: BreedModalProps) => {
             </div>
 
             <p className="text-xs md:text-sm text-zinc-400 text-center mt-2">
-              * Cuando en la precio dice a partir de, significa que el precio
+              * Cuando en el precio dice a partir de, significa que el precio
               puede variar dependiendo de la calidad del cachorro y su pedigree.
             </p>
           </div>

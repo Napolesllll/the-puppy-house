@@ -33,20 +33,20 @@ const BreedCard = ({
   delay?: number;
 }) => {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, delay }}
-      whileHover="hover"
-      variants={cardVariants}
-      className="group relative rounded-2xl overflow-hidden shadow-2xl shadow-red-900/50 bg-gradient-to-br from-zinc-800 to-zinc-900 text-white cursor-pointer border border-red-500/20 hover:border-red-500/50 transition-all"
-    >
-      {/* Glow effect background */}
+    <Link href={href}>
       <motion.div
-        className="absolute inset-0 bg-gradient-to-br from-red-600/0 via-red-500/0 to-red-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"
-      />
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay }}
+        whileHover="hover"
+        variants={cardVariants}
+        className="group relative rounded-2xl overflow-hidden shadow-2xl shadow-red-900/50 bg-gradient-to-br from-zinc-800 to-zinc-900 text-white cursor-pointer border border-red-500/20 hover:border-red-500/50 transition-all h-full"
+      >
+        {/* Glow effect background */}
+        <motion.div
+          className="absolute inset-0 bg-gradient-to-br from-red-600/0 via-red-500/0 to-red-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"
+        />
 
-      <Link href={href}>
         <div className="relative h-72 w-full overflow-hidden">
           <Image 
             src={imgSrc} 
@@ -72,8 +72,8 @@ const BreedCard = ({
             {description}
           </p>
         </div>
-      </Link>
-    </motion.div>
+      </motion.div>
+    </Link>
   );
 };
 
