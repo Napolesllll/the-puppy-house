@@ -134,7 +134,7 @@ const AdminPromotions = () => {
       setUploadingImage(true);
       const formDataUpload = new FormData();
       formDataUpload.append("file", file);
-      formDataUpload.append("folder", "mascoticas-med/promotions");
+      formDataUpload.append("folder", "the-puppy-house/promotions");
 
       const res = await fetch("/api/upload", {
         method: "POST",
@@ -309,7 +309,7 @@ const AdminPromotions = () => {
     return (
       <div className="min-h-screen bg-gradient-to-br from-zinc-900 via-black to-zinc-950 text-white p-6 flex items-center justify-center">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-red-500 mx-auto mb-4"></div>
+          <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-amber-500 mx-auto mb-4"></div>
           <p className="text-zinc-400">Cargando promociones...</p>
         </div>
       </div>
@@ -332,7 +332,7 @@ const AdminPromotions = () => {
               </motion.button>
             </Link>
             <div>
-              <h1 className="text-4xl font-black bg-gradient-to-r from-amber-400 to-red-500 bg-clip-text text-transparent">
+              <h1 className="text-4xl font-black bg-gradient-to-r from-amber-400 to-amber-500 bg-clip-text text-transparent">
                 Gestión de Promociones
               </h1>
               <p className="text-zinc-400 mt-1">
@@ -349,7 +349,7 @@ const AdminPromotions = () => {
               resetForm();
               setShowForm(true);
             }}
-            className="flex items-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-red-500 to-pink-500 hover:from-red-600 hover:to-pink-600 font-bold shadow-lg shadow-red-500/40 transition-all text-lg"
+            className="flex items-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-amber-500 to-pink-500 hover:from-amber-600 hover:to-pink-600 font-bold shadow-lg shadow-amber-500/40 transition-all text-lg"
           >
             <Plus size={24} />
             Nueva Promoción
@@ -358,7 +358,7 @@ const AdminPromotions = () => {
 
         {/* Mensaje de error */}
         {error && (
-          <div className="mb-6 p-4 rounded-xl bg-red-500/20 border border-red-500/50 text-red-300">
+          <div className="mb-6 p-4 rounded-xl bg-amber-500/20 border border-amber-500/50 text-amber-300">
             <p className="font-semibold">⚠️ {error}</p>
             <p className="text-sm mt-1">
               Asegúrate de que la base de datos esté corriendo y que las migraciones se hayan ejecutado.
@@ -377,7 +377,7 @@ const AdminPromotions = () => {
             <motion.div
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
-              className="bg-zinc-900 rounded-2xl p-8 max-w-3xl w-full border border-red-500/30 shadow-2xl shadow-red-500/20 max-h-[90vh] overflow-y-auto"
+              className="bg-zinc-900 rounded-2xl p-8 max-w-3xl w-full border border-amber-500/30 shadow-2xl shadow-amber-500/20 max-h-[90vh] overflow-y-auto"
               onClick={(e) => e.stopPropagation()}
             >
               <div className="mb-6">
@@ -404,7 +404,7 @@ const AdminPromotions = () => {
                     onChange={(e) =>
                       setFormData({ ...formData, title: e.target.value })
                     }
-                    className="w-full px-4 py-3 rounded-xl bg-zinc-800 border border-zinc-700 focus:border-red-500 outline-none transition-colors text-white"
+                    className="w-full px-4 py-3 rounded-xl bg-zinc-800 border border-zinc-700 focus:border-amber-500 outline-none transition-colors text-white"
                     placeholder="Ej: ¡50% de Descuento en Golden Retriever!"
                   />
                 </div>
@@ -421,7 +421,7 @@ const AdminPromotions = () => {
                       setFormData({ ...formData, description: e.target.value })
                     }
                     rows={4}
-                    className="w-full px-4 py-3 rounded-xl bg-zinc-800 border border-zinc-700 focus:border-red-500 outline-none transition-colors resize-none text-white"
+                    className="w-full px-4 py-3 rounded-xl bg-zinc-800 border border-zinc-700 focus:border-amber-500 outline-none transition-colors resize-none text-white"
                     placeholder="Descripción detallada de la promoción..."
                   />
                 </div>
@@ -450,7 +450,7 @@ const AdminPromotions = () => {
                             discount: Number(e.target.value),
                           })
                         }
-                        className="w-full pl-12 pr-4 py-3 rounded-xl bg-zinc-800 border border-zinc-700 focus:border-red-500 outline-none transition-colors text-white"
+                        className="w-full pl-12 pr-4 py-3 rounded-xl bg-zinc-800 border border-zinc-700 focus:border-amber-500 outline-none transition-colors text-white"
                       />
                     </div>
                   </div>
@@ -470,7 +470,7 @@ const AdminPromotions = () => {
                         onChange={(e) =>
                           setFormData({ ...formData, badge: e.target.value })
                         }
-                        className="w-full pl-12 pr-4 py-3 rounded-xl bg-zinc-800 border border-zinc-700 focus:border-red-500 outline-none transition-colors appearance-none text-white"
+                        className="w-full pl-12 pr-4 py-3 rounded-xl bg-zinc-800 border border-zinc-700 focus:border-amber-500 outline-none transition-colors appearance-none text-white"
                       >
                         <option value="">Sin badge</option>
                         {badgeOptions.map((badge) => (
@@ -499,7 +499,7 @@ const AdminPromotions = () => {
                         onChange={(e) =>
                           setFormData({ ...formData, startDate: e.target.value })
                         }
-                        className="w-full pl-12 pr-4 py-3 rounded-xl bg-zinc-800 border border-zinc-700 focus:border-red-500 outline-none transition-colors text-white"
+                        className="w-full pl-12 pr-4 py-3 rounded-xl bg-zinc-800 border border-zinc-700 focus:border-amber-500 outline-none transition-colors text-white"
                       />
                     </div>
                   </div>
@@ -521,7 +521,7 @@ const AdminPromotions = () => {
                         onChange={(e) =>
                           setFormData({ ...formData, endDate: e.target.value })
                         }
-                        className="w-full pl-12 pr-4 py-3 rounded-xl bg-zinc-800 border border-zinc-700 focus:border-red-500 outline-none transition-colors text-white"
+                        className="w-full pl-12 pr-4 py-3 rounded-xl bg-zinc-800 border border-zinc-700 focus:border-amber-500 outline-none transition-colors text-white"
                       />
                     </div>
                   </div>
@@ -537,7 +537,7 @@ const AdminPromotions = () => {
                     onChange={(e) =>
                       setFormData({ ...formData, breedId: e.target.value })
                     }
-                    className="w-full px-4 py-3 rounded-xl bg-zinc-800 border border-zinc-700 focus:border-red-500 outline-none transition-colors text-white"
+                    className="w-full px-4 py-3 rounded-xl bg-zinc-800 border border-zinc-700 focus:border-amber-500 outline-none transition-colors text-white"
                   >
                     <option value="">Ninguna (promoción general)</option>
                     {breeds.map((breed) => (
@@ -556,7 +556,7 @@ const AdminPromotions = () => {
                   <div className="space-y-4">
                     {formData.image ? (
                       <div className="relative group">
-                        <div className="relative h-48 rounded-xl overflow-hidden border-2 border-red-500/50 bg-zinc-800">
+                        <div className="relative h-48 rounded-xl overflow-hidden border-2 border-amber-500/50 bg-zinc-800">
                           <Image
                             key={formData.image}
                             src={`${formData.image}?t=${Date.now()}`}
@@ -582,9 +582,9 @@ const AdminPromotions = () => {
                         </label>
                       </div>
                     ) : (
-                      <label className="flex items-center justify-center gap-3 px-6 py-8 rounded-xl bg-zinc-800 border-2 border-dashed border-zinc-700 hover:border-red-500 cursor-pointer transition-colors group">
+                      <label className="flex items-center justify-center gap-3 px-6 py-8 rounded-xl bg-zinc-800 border-2 border-dashed border-zinc-700 hover:border-amber-500 cursor-pointer transition-colors group">
                         <div className="text-center">
-                          <ImageIcon size={24} className={`mx-auto mb-2 transition-colors ${uploadingImage ? 'text-amber-400' : 'text-zinc-400 group-hover:text-red-400'}`} />
+                          <ImageIcon size={24} className={`mx-auto mb-2 transition-colors ${uploadingImage ? 'text-amber-400' : 'text-zinc-400 group-hover:text-amber-400'}`} />
                           <span className="text-zinc-300 font-medium block">
                             {uploadingImage
                               ? "Subiendo a Cloudinary..."
@@ -615,7 +615,7 @@ const AdminPromotions = () => {
                       onChange={(e) =>
                         setFormData({ ...formData, isActive: e.target.checked })
                       }
-                      className="w-5 h-5 rounded bg-zinc-800 border-zinc-600 text-red-500 focus:ring-red-500"
+                      className="w-5 h-5 rounded bg-zinc-800 border-zinc-600 text-amber-500 focus:ring-amber-500"
                     />
                     <span className="text-zinc-300 font-medium">Activa</span>
                   </label>
@@ -638,7 +638,7 @@ const AdminPromotions = () => {
                   <motion.button
                     type="submit"
                     whileHover={{ scale: 1.02 }}
-                    className="flex-1 px-6 py-3 rounded-xl bg-gradient-to-r from-red-500 to-pink-500 hover:from-red-600 hover:to-pink-600 font-bold shadow-lg shadow-red-500/30"
+                    className="flex-1 px-6 py-3 rounded-xl bg-gradient-to-r from-amber-500 to-pink-500 hover:from-amber-600 hover:to-pink-600 font-bold shadow-lg shadow-amber-500/30"
                   >
                     {editingId ? "Actualizar" : "Crear"} Promoción
                   </motion.button>
@@ -664,7 +664,7 @@ const AdminPromotions = () => {
               key={promo.id}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="relative rounded-2xl overflow-hidden bg-zinc-800/50 border border-zinc-700 hover:border-red-500/50 transition-all group"
+              className="relative rounded-2xl overflow-hidden bg-zinc-800/50 border border-zinc-700 hover:border-amber-500/50 transition-all group"
             >
               {/* Imagen */}
               <div className="relative h-48">
@@ -691,7 +691,7 @@ const AdminPromotions = () => {
                 </div>
 
                 {/* Descuento */}
-                <div className="absolute top-3 right-3 bg-red-500 text-white rounded-full w-16 h-16 flex items-center justify-center font-black shadow-lg">
+                <div className="absolute top-3 right-3 bg-amber-500 text-white rounded-full w-16 h-16 flex items-center justify-center font-black shadow-lg">
                   -{promo.discount}%
                 </div>
               </div>
@@ -739,7 +739,7 @@ const AdminPromotions = () => {
 
                   <button
                     onClick={() => handleDelete(promo.id)}
-                    className="px-4 py-2 rounded-lg bg-red-500/20 text-red-400 hover:bg-red-500/30 transition-colors"
+                    className="px-4 py-2 rounded-lg bg-amber-500/20 text-amber-400 hover:bg-amber-500/30 transition-colors"
                   >
                     <Trash2 size={16} />
                   </button>
@@ -759,7 +759,7 @@ const AdminPromotions = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               onClick={() => setShowForm(true)}
-              className="px-6 py-3 rounded-xl bg-gradient-to-r from-red-500 to-pink-500 font-bold"
+              className="px-6 py-3 rounded-xl bg-gradient-to-r from-amber-500 to-pink-500 font-bold"
             >
               Crear Primera Promoción
             </motion.button>
@@ -783,7 +783,7 @@ const AdminPromotions = () => {
             resetForm();
             setShowForm(true);
           }}
-          className="fixed bottom-10 right-10 w-20 h-20 rounded-full bg-gradient-to-br from-red-500 via-red-600 to-pink-500 hover:from-red-600 hover:to-pink-600 flex items-center justify-center text-white z-[999] transition-all border-3 border-white/30"
+          className="fixed bottom-10 right-10 w-20 h-20 rounded-full bg-gradient-to-br from-amber-500 via-amber-600 to-pink-500 hover:from-amber-600 hover:to-pink-600 flex items-center justify-center text-white z-[999] transition-all border-3 border-white/30"
         >
           <Plus size={32} />
         </motion.button>

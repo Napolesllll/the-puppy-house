@@ -7,15 +7,15 @@ import { Analytics } from "@vercel/analytics/react";
 const inter = Inter({ subsets: ["latin"] });
 
 // Variables de configuración (reemplazar con valores reales)
-const SITE_URL = "https://mascoticasbucaramangamedellin.com"; // Cambiar por tu dominio
+const SITE_URL = "https://thepuppyhouse.com"; // The Puppy House
 const GA_ID = "G-XXXXXXXXXX"; // Cambiar por tu ID de Google Analytics
 const VERIFICATION_CODE = ""; // Agregar código de verificación de Google Search Console
 
 export const metadata: Metadata = {
   title: {
     default:
-      "Mascoticas Medellín - Venta de Cachorros de Raza Pura | Criadero Certificado",
-    template: "%s | Mascoticas Medellín",
+      "The Puppy House - Venta de Cachorros de Raza Pura | Criadero de Calidad",
+    template: "%s | The Puppy House",
   },
   description:
     "🐕 Venta de cachorros de raza pura en Medellín y Antioquia. Golden Retriever, Bulldog Francés, Pastor Alemán con pedigree certificado. ✅ Garantía sanitaria completa y entrega responsable.",
@@ -35,9 +35,9 @@ export const metadata: Metadata = {
     "cachorros vacunados Medellín",
     "garantía sanitaria mascotas",
   ].join(", "),
-  authors: [{ name: "Jhon Cano", url: SITE_URL }],
-  creator: "Mascoticas Medellín - Criadero Certificado",
-  publisher: "Mascoticas Medellín",
+  authors: [{ name: "The Puppy House", url: SITE_URL }],
+  creator: "The Puppy House - Criadero de Calidad",
+  publisher: "The Puppy House",
 formatDetection: {
   email: false,
   telephone: false,
@@ -59,29 +59,29 @@ formatDetection: {
     type: "website",
     locale: "es_CO",
     url: SITE_URL,
-    siteName: "Mascoticas Medellín",
+    siteName: "The Puppy House",
     title:
-      "Mascoticas Medellín - Cachorros de Raza Pura con Pedigree Certificado",
+      "The Puppy House - Cachorros de Raza Pura con Pedigree Certificado",
     description:
-      "Los mejores cachorros de raza pura en Medellín y Antioquia. Criadero certificado con garantía sanitaria completa, pedigree internacional y entrega responsable. ¡Conoce a tu nuevo mejor amigo!",
+      "Los mejores cachorros de raza pura en Medellín y Antioquia. Criadero de calidad con garantía sanitaria completa, pedigree internacional y entrega responsable. ¡Conoce a tu nuevo mejor amigo!",
     // Descomentar cuando tengas la imagen
     // images: [
     //   {
     //     url: `${SITE_URL}/og-image.jpg`,
     //     width: 1200,
     //     height: 630,
-    //     alt: "Mascoticas Medellín - Cachorros de Raza Pura",
+    //     alt: "The Puppy House - Cachorros de Raza Pura",
     //     type: "image/jpeg",
     //   },
     // ],
   },
   twitter: {
     card: "summary_large_image",
-    site: "@MascoticanMedellin", // Cambiar por tu usuario real
-    creator: "@MascoticanMedellin",
-    title: "Mascoticas Medellín - Cachorros de Raza Pura",
+    site: "@ThePuppyHouse",
+    creator: "@ThePuppyHouse",
+    title: "The Puppy House - Cachorros de Raza Pura",
     description:
-      "Criadero certificado de cachorros de raza pura en Medellín con pedigree y garantía sanitaria completa. Golden Retriever, Bulldog Francés y más.",
+      "Criadero de calidad de cachorros de raza pura en Medellín con pedigree y garantía sanitaria completa. Golden Retriever, Bulldog Francés y más.",
     // images: [`${SITE_URL}/og-image.jpg`],
   },
   verification: {
@@ -99,31 +99,31 @@ const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "PetStore",
   "@id": `${SITE_URL}/#organization`,
-  name: "Mascoticas Medellín",
-  alternateName: "Mascoticas",
+  name: "The Puppy House",
+  alternateName: "The Puppy House",
   url: SITE_URL,
-  logo: `${SITE_URL}/logo-mascoticas.png`,
+  logo: `${SITE_URL}/LOGO.png`,
   description:
     "Criadero especializado en la venta de cachorros de raza pura con pedigree certificado en Medellín, Colombia. Garantía sanitaria completa y entrega responsable.",
 
   // Información de contacto y ubicación
   address: {
     "@type": "PostalAddress",
-    streetAddress: "Bello Antioquia", // Actualizar
-    addressLocality: "Bello",
+    streetAddress: "Medellín, Antioquia",
+    addressLocality: "Medellín",
     addressRegion: "Antioquia",
-    postalCode: "051053",
+    postalCode: "050000",
     addressCountry: "CO",
   },
   geo: {
     "@type": "GeoCoordinates",
-    latitude: "6.3378", // Coordenadas de Bello, Antioquia
-    longitude: "-75.5547",
+    latitude: "6.2442",
+    longitude: "-75.5812",
   },
 
   // Información comercial
-  telephone: "+57-316-316-9143", // Actualizar con número real
-  email: "info@mascoticastmedellin.com", // Actualizar
+  telephone: "+57-316-316-9143",
+  email: "info@thepuppyhouse.com",
   priceRange: "$1.000.000 - $3.000.000",
   currenciesAccepted: "COP",
   paymentAccepted: ["Cash", "Credit Card", "Bank Transfer", "PSE"],
@@ -195,10 +195,8 @@ const organizationSchema = {
   // Redes sociales
   sameAs: [
     // Descomentar y actualizar con tus redes reales
-    "https://www.tiktok.com/@mascoticasbucaramedellin?_r=1&_t=ZS-93SpvqrQcJW",
-    "https://www.instagram.com/mascoticasbucaramanga_medellin/",
     // "https://www.facebook.com/MascoticanMedellin",
-    // "https://www.instagram.com/mascoticastmedellin",
+    // "https://www.instagram.com/thepuppyhouse",
     // "https://wa.me/573001234567"
   ],
 };
@@ -209,9 +207,9 @@ const websiteSchema = {
   "@type": "WebSite",
   "@id": `${SITE_URL}/#website`,
   url: SITE_URL,
-  name: "Mascoticas Medellín",
+  name: "The Puppy House",
   description:
-    "Sitio web oficial de Mascoticas Medellín - Criadero de cachorros de raza pura",
+    "Sitio web oficial de The Puppy House - Criadero de cachorros de raza pura",
   publisher: {
     "@id": `${SITE_URL}/#organization`,
   },
@@ -302,7 +300,7 @@ export default function RootLayout({
                   function gtag(){dataLayer.push(arguments);}
                   gtag('js', new Date());
                   gtag('config', '${GA_ID}', {
-                    page_title: 'Mascoticas Medellín',
+                    page_title: 'The Puppy House',
                     page_location: window.location.href,
                     custom_map: {
                       'breed_view': 'raza_vista',
@@ -340,7 +338,7 @@ export default function RootLayout({
         {/* <link rel="preload" as="image" href="/hero-cachorro.webp" /> */}
 
         {/* Open Graph adicional */}
-        <meta property="og:site_name" content="Mascoticas Medellín" />
+        <meta property="og:site_name" content="The Puppy House" />
         <meta property="og:locale" content="es_CO" />
         <meta property="fb:app_id" content="TU_FB_APP_ID" />
 

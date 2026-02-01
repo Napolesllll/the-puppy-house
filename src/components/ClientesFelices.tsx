@@ -73,7 +73,7 @@ const ClientesFelices = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4 mt-10">
-            Nuestros <span className="text-red-500">Clientes Felices</span>
+            Nuestros <span className="text-amber-500">Clientes Felices</span>
           </h2>
           <p className="text-xl text-zinc-300 max-w-2xl mx-auto">
             Las experiencias de familias que han encontrado a su compañero perfecto con nosotros
@@ -118,11 +118,11 @@ const ClientesFelices = () => {
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
-              className="bg-zinc-800/50 backdrop-blur-sm rounded-xl p-6 border border-zinc-700 hover:border-red-500/30 transition-all"
+              className="bg-zinc-800/50 backdrop-blur-sm rounded-xl p-6 border border-zinc-700 hover:border-amber-500/30 transition-all"
               whileHover={{ y: -10 }}
             >
               <div className="flex items-center mb-4">
-                <div className="relative w-14 h-14 rounded-full overflow-hidden border-2 border-red-500">
+                <div className="relative w-14 h-14 rounded-full overflow-hidden border-2 border-amber-500">
                   <Image
                     src={testimonio.foto}
                     alt={testimonio.nombre}
@@ -132,7 +132,7 @@ const ClientesFelices = () => {
                 </div>
                 <div className="ml-4">
                   <h3 className="font-bold text-lg">{testimonio.nombre}</h3>
-                  <p className="text-red-400 text-sm">{testimonio.mascota}</p>
+                  <p className="text-amber-400 text-sm">{testimonio.mascota}</p>
                 </div>
               </div>
               <p className="text-zinc-300 italic">&quot;{testimonio.comentario}&quot;</p>

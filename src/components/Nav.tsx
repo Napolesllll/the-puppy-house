@@ -46,14 +46,14 @@ const Nav = ({
 
   return (
     <nav
-      className={`bg-gradient-to-b from-black via-zinc-900 to-black text-white fixed top-0 left-0 right-0 w-full shadow-2xl shadow-red-900/50 transition-all overflow-hidden border-b border-red-500/30 ${
+      className={`bg-gradient-to-b from-black via-zinc-900 to-black text-white fixed top-0 left-0 right-0 w-full shadow-2xl shadow-amber-900/50 transition-all overflow-hidden border-b border-amber-500/30 ${
         isModalOpen ? "z-10" : "z-50"
       }`}
       aria-label="Navegación principal"
     >
       {/* Animated top glow line */}
       <motion.div
-        className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-red-500 to-transparent"
+        className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-amber-500 to-transparent"
         animate={{ opacity: [0.3, 0.8, 0.3] }}
         transition={{ duration: 3, repeat: Infinity }}
       />
@@ -63,7 +63,7 @@ const Nav = ({
         {pawprints.map((paw) => (
           <motion.div
             key={paw.id}
-            className="absolute text-red-500/30"
+            className="absolute text-amber-500/30"
             style={{
               top: `${paw.top}%`,
               left: `${paw.left}%`,
@@ -94,7 +94,7 @@ const Nav = ({
           >
             {/* Glow effect behind logo */}
             <motion.div
-              className="absolute -inset-2 bg-red-500/20 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity"
+              className="absolute -inset-2 bg-amber-500/20 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity"
             />
             
             <motion.div
@@ -103,8 +103,8 @@ const Nav = ({
               className="relative"
             >
               <Image
-                src="/LOGO.png"
-                alt="Logo Mascoticas"
+                src="/log1.png"
+                alt="Logo The Puppy House"
                 width={150}
                 height={50}
                 className="drop-shadow-lg"
@@ -129,7 +129,7 @@ const Nav = ({
                 onClick={() => onNavigate(item.id as Section)}
                 className={`relative px-5 py-2.5 rounded-xl font-semibold transition-all text-sm flex items-center gap-2 ${
                   currentSection === item.id
-                    ? "bg-gradient-to-r from-red-600 to-red-500 text-white shadow-lg shadow-red-500/40"
+                    ? "bg-gradient-to-r from-amber-600 to-amber-500 text-white shadow-lg shadow-amber-500/40"
                     : "text-white/80 hover:text-white"
                 }`}
                 whileHover={{ scale: 1.05 }}
@@ -138,7 +138,7 @@ const Nav = ({
                 {/* Subtle background for inactive items */}
                 {currentSection !== item.id && (
                   <motion.div
-                    className="absolute inset-0 bg-red-600/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity"
+                    className="absolute inset-0 bg-amber-600/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity"
                     whileHover={{ opacity: 0.2 }}
                   />
                 )}
@@ -150,7 +150,7 @@ const Nav = ({
                 {currentSection === item.id && (
                   <motion.div
                     layoutId="navUnderline"
-                    className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-red-300 to-red-600 rounded-full"
+                    className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-amber-300 to-amber-600 rounded-full"
                     transition={{ type: "spring", stiffness: 300, damping: 30 }}
                   />
                 )}
@@ -164,7 +164,7 @@ const Nav = ({
           <motion.button
             onClick={toggleMenu}
             aria-label="Abrir menú móvil"
-            className="relative group p-2.5 rounded-lg hover:bg-red-600/20 transition-colors"
+            className="relative group p-2.5 rounded-lg hover:bg-amber-600/20 transition-colors"
             whileTap={{ scale: 0.9 }}
           >
             <motion.svg
@@ -172,7 +172,7 @@ const Nav = ({
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
-              className="h-6 w-6 text-red-500 group-hover:text-red-400 transition-colors"
+              className="h-6 w-6 text-amber-500 group-hover:text-amber-400 transition-colors"
               animate={{ rotate: isMenuOpen ? 90 : 0 }}
               transition={{ duration: 0.3 }}
             >
@@ -186,7 +186,7 @@ const Nav = ({
 
             {/* Glow effect on hover */}
             <motion.div
-              className="absolute inset-0 bg-red-500/20 rounded-lg blur-md opacity-0 group-hover:opacity-100 transition-opacity -z-10"
+              className="absolute inset-0 bg-amber-500/20 rounded-lg blur-md opacity-0 group-hover:opacity-100 transition-opacity -z-10"
             />
           </motion.button>
         </motion.div>
@@ -218,15 +218,15 @@ const Nav = ({
             >
               {/* Glow background effect */}
               <motion.div
-                className="absolute inset-0 bg-gradient-to-b from-red-500/20 via-transparent to-red-500/10 blur-3xl"
+                className="absolute inset-0 bg-gradient-to-b from-amber-500/20 via-transparent to-amber-500/10 blur-3xl"
                 animate={{ opacity: [0.3, 0.6, 0.3] }}
                 transition={{ duration: 4, repeat: Infinity }}
               />
 
-              <div className="relative w-full max-w-sm bg-gradient-to-br from-zinc-900 via-black to-zinc-900 text-white p-8 rounded-3xl overflow-hidden border border-red-500/30 shadow-2xl shadow-red-900/50">
+              <div className="relative w-full max-w-sm bg-gradient-to-br from-zinc-900 via-black to-zinc-900 text-white p-8 rounded-3xl overflow-hidden border border-amber-500/30 shadow-2xl shadow-amber-900/50">
                 {/* Decorative top accent */}
                 <motion.div
-                  className="absolute top-0 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-transparent via-red-500 to-transparent"
+                  className="absolute top-0 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-transparent via-amber-500 to-transparent"
                   animate={{ opacity: [0.5, 1, 0.5] }}
                   transition={{ duration: 2, repeat: Infinity }}
                 />
@@ -234,7 +234,7 @@ const Nav = ({
                 {/* Botón cerrar luxury */}
                 <motion.button
                   onClick={() => setIsMenuOpen(false)}
-                  className="absolute top-6 right-6 text-red-500 hover:text-red-400 transition-colors z-20 text-3xl font-light"
+                  className="absolute top-6 right-6 text-amber-500 hover:text-amber-400 transition-colors z-20 text-3xl font-light"
                   whileHover={{ rotate: 90, scale: 1.1 }}
                   aria-label="Cerrar menú"
                 >
@@ -246,7 +246,7 @@ const Nav = ({
                   {pawprintsMobile.map((paw) => (
                     <motion.div
                       key={`mobile-${paw.id}`}
-                      className="absolute text-red-500/40"
+                      className="absolute text-amber-500/40"
                       style={{
                         top: `${paw.top}%`,
                         left: `${paw.left}%`,
@@ -269,20 +269,20 @@ const Nav = ({
                   animate={{ y: [0, -5, 0] }}
                   transition={{ duration: 3, repeat: Infinity }}
                 >
-                  <div className="w-16 h-16 rounded-full border-2 border-red-500/50 flex items-center justify-center">
+                  <div className="w-16 h-16 rounded-full border-2 border-amber-500/50 flex items-center justify-center">
                     <span className="text-2xl">🐕</span>
                   </div>
                 </motion.div>
 
                 {/* Título decorativo */}
                 <div className="relative z-10 text-center mb-8">
-                  <h2 className="text-xl font-black bg-gradient-to-r from-red-400 to-red-600 bg-clip-text text-transparent">
-                    Mascoticas
+                  <h2 className="text-xl font-black bg-gradient-to-r from-amber-400 to-amber-600 bg-clip-text text-transparent">
+                    The Puppy House
                   </h2>
-                  <div className="flex items-center justify-center gap-2 mt-2 text-xs text-red-300/60">
-                    <span className="w-2 h-px bg-red-500/40" />
+                  <div className="flex items-center justify-center gap-2 mt-2 text-xs text-amber-300/60">
+                    <span className="w-2 h-px bg-amber-500/40" />
                     <span>Tu criadero de confianza</span>
-                    <span className="w-2 h-px bg-red-500/40" />
+                    <span className="w-2 h-px bg-amber-500/40" />
                   </div>
                 </div>
 
@@ -308,8 +308,8 @@ const Nav = ({
                         }}
                         className={`py-3 px-6 w-full text-center rounded-2xl font-semibold transition-all flex items-center justify-center gap-3 ${
                           currentSection === item.id
-                            ? "bg-gradient-to-r from-red-600 to-red-500 text-white shadow-lg shadow-red-500/50 border border-red-400/50"
-                            : "bg-zinc-800/50 text-white border border-zinc-700/50 hover:border-red-500/50"
+                            ? "bg-gradient-to-r from-amber-600 to-amber-500 text-white shadow-lg shadow-amber-500/50 border border-amber-400/50"
+                            : "bg-zinc-800/50 text-white border border-zinc-700/50 hover:border-amber-500/50"
                         }`}
                         whileHover={{ scale: 1.05, y: -2 }}
                         whileTap={{ scale: 0.95 }}
@@ -323,7 +323,7 @@ const Nav = ({
 
                 {/* Decorative bottom accent */}
                 <motion.div
-                  className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-transparent via-red-500 to-transparent"
+                  className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-transparent via-amber-500 to-transparent"
                   animate={{ opacity: [0.5, 1, 0.5] }}
                   transition={{ duration: 2, repeat: Infinity, delay: 1 }}
                 />

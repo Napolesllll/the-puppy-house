@@ -60,10 +60,10 @@ export default function Footer({ currentSection, onNavigate }: FooterProps) {
   ] as const;
 
   return (
-    <footer className="relative bg-gradient-to-br from-black via-zinc-900 to-black text-white py-20 px-6 z-10 overflow-hidden border-t border-red-500/30">
+    <footer className="relative bg-gradient-to-br from-black via-zinc-900 to-black text-white py-20 px-6 z-10 overflow-hidden border-t border-amber-500/30">
       {/* Animated background orbs */}
       <motion.div
-        className="absolute top-0 -left-40 w-96 h-96 bg-red-600/15 rounded-full blur-3xl opacity-40"
+        className="absolute top-0 -left-40 w-96 h-96 bg-amber-600/15 rounded-full blur-3xl opacity-40"
         animate={{
           y: [0, 50, 0],
           x: [0, 30, 0],
@@ -76,7 +76,7 @@ export default function Footer({ currentSection, onNavigate }: FooterProps) {
       />
 
       <motion.div
-        className="absolute bottom-0 -right-40 w-80 h-80 bg-red-500/10 rounded-full blur-3xl opacity-40"
+        className="absolute bottom-0 -right-40 w-80 h-80 bg-amber-500/10 rounded-full blur-3xl opacity-40"
         animate={{
           y: [0, -50, 0],
           x: [0, -30, 0],
@@ -142,13 +142,13 @@ export default function Footer({ currentSection, onNavigate }: FooterProps) {
           transition={{ duration: 0.8 }}
         >
           <motion.div
-            className="h-1 flex-grow bg-gradient-to-r from-transparent to-red-500/60"
+            className="h-1 flex-grow bg-gradient-to-r from-transparent to-amber-500/60"
             animate={{ scaleX: [0, 1] }}
             transition={{ duration: 1 }}
           />
-          <span className="text-red-400 font-semibold text-xs">MASCOTICAS MEDELLÍN</span>
+          <span className="text-amber-400 font-semibold text-xs">MASCOTICAS MEDELLÍN</span>
           <motion.div
-            className="h-1 flex-grow bg-gradient-to-l from-transparent to-red-500/60"
+            className="h-1 flex-grow bg-gradient-to-l from-transparent to-amber-500/60"
             animate={{ scaleX: [0, 1] }}
             transition={{ duration: 1 }}
           />
@@ -162,7 +162,7 @@ export default function Footer({ currentSection, onNavigate }: FooterProps) {
         >
           {/* Glow background */}
           <motion.div
-            className="absolute -inset-4 bg-red-500/20 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity"
+            className="absolute -inset-4 bg-amber-500/20 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity"
           />
 
           {onNavigate ? (
@@ -172,18 +172,18 @@ export default function Footer({ currentSection, onNavigate }: FooterProps) {
               className="mx-auto relative"
             >
               <Image
-                src="/LOGO.png"
-                alt="Logo Mascoticas"
+                src="/thepuppyhouselogo.png"
+                alt="Logo The Puppy House"
                 width={150}
                 height={50}
                 className="drop-shadow-2xl"
               />
             </button>
-          ) : (
+          ) : ( 
             <Link href="/" className="relative">
               <Image
-                src="/LOGO.png"
-                alt="Logo Mascoticas"
+                src="/thepuppyhouselogo.png"
+                alt="Logo The Puppy House"
                 width={150}
                 height={50}
                 className="drop-shadow-2xl"
@@ -199,23 +199,23 @@ export default function Footer({ currentSection, onNavigate }: FooterProps) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
         >
-          Encuentra a tu <span className="text-red-400 font-semibold">mejor amigo peludo</span>. <span className="text-red-500">¡Juntos hasta el fin!</span>
+          Encuentra a tu <span className="text-amber-400 font-semibold">mejor amigo peludo</span>. <span className="text-amber-500">¡Juntos hasta el fin!</span>
         </motion.p>
 
-        {/* Grid de contenido con estilo luxury */}
+        {/* Grid de contenido con estilo luxury */} 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mb-12 relative z-10">
           {/* Enlaces */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="group relative p-6 rounded-2xl border border-red-500/20 hover:border-red-500/50 transition-all duration-300 backdrop-blur-sm hover:bg-red-500/5"
+            className="group relative p-6 rounded-2xl border border-amber-500/20 hover:border-amber-500/50 transition-all duration-300 backdrop-blur-sm hover:bg-amber-500/5"
           >
             <motion.div
-              className="absolute inset-0 bg-gradient-to-br from-red-600/0 via-transparent to-red-500/0 opacity-0 group-hover:opacity-100 rounded-2xl transition-opacity duration-500"
+              className="absolute inset-0 bg-gradient-to-br from-amber-600/0 via-transparent to-amber-500/0 opacity-0 group-hover:opacity-100 rounded-2xl transition-opacity duration-500"
             />
             
-            <h3 className="text-lg font-black mb-4 text-red-400 drop-shadow-lg relative z-10">
+            <h3 className="text-lg font-black mb-4 text-amber-400 drop-shadow-lg relative z-10">
               🔗 Enlaces
             </h3>
             <ul className="space-y-3 text-sm relative z-10">
@@ -231,8 +231,8 @@ export default function Footer({ currentSection, onNavigate }: FooterProps) {
                       onClick={() => onNavigate(item.id)}
                       className={`w-full text-left px-3 py-1.5 rounded-lg transition-all font-medium ${
                         currentSection === item.id
-                          ? "text-red-400 bg-red-500/20 border border-red-500/40"
-                          : "text-zinc-300 hover:text-red-300 hover:bg-red-500/10"
+                          ? "text-amber-400 bg-amber-500/20 border border-amber-500/40"
+                          : "text-zinc-300 hover:text-amber-300 hover:bg-amber-500/10"
                       }`}
                     >
                       {item.label}
@@ -242,8 +242,8 @@ export default function Footer({ currentSection, onNavigate }: FooterProps) {
                       href={sectionHref[item.id]}
                       className={`block px-3 py-1.5 rounded-lg transition-all font-medium ${
                         currentSection === item.id
-                          ? "text-red-400 bg-red-500/20 border border-red-500/40"
-                          : "text-zinc-300 hover:text-red-300 hover:bg-red-500/10"
+                          ? "text-amber-400 bg-amber-500/20 border border-amber-500/40"
+                          : "text-zinc-300 hover:text-amber-300 hover:bg-amber-500/10"
                       }`}
                     >
                       {item.label}
@@ -259,20 +259,20 @@ export default function Footer({ currentSection, onNavigate }: FooterProps) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="group relative p-6 rounded-2xl border border-red-500/20 hover:border-red-500/50 transition-all duration-300 backdrop-blur-sm hover:bg-red-500/5"
+            className="group relative p-6 rounded-2xl border border-amber-500/20 hover:border-amber-500/50 transition-all duration-300 backdrop-blur-sm hover:bg-amber-500/5"
           >
             <motion.div
-              className="absolute inset-0 bg-gradient-to-br from-red-600/0 via-transparent to-red-500/0 opacity-0 group-hover:opacity-100 rounded-2xl transition-opacity duration-500"
+              className="absolute inset-0 bg-gradient-to-br from-amber-600/0 via-transparent to-amber-500/0 opacity-0 group-hover:opacity-100 rounded-2xl transition-opacity duration-500"
             />
 
-            <h3 className="text-lg font-black mb-5 text-red-400 drop-shadow-lg relative z-10">
+            <h3 className="text-lg font-black mb-5 text-amber-400 drop-shadow-lg relative z-10">
               🎵 Síguenos
             </h3>
             <div className="flex justify-center gap-6 text-3xl text-zinc-400 relative z-10">
               {[
                 {
                   Icon: FaTiktok,
-                  url: "https://www.tiktok.com/@mascoticasbucaramedellin?_r=1&_t=ZS-93SpvqrQcJW",
+                  url: "https://www.tiktok.com/@thepuppyhouse?_r=1&_t=ZS-93SpvqrQcJW",
                   label: "TikTok",
                 },
               ].map((link, idx) => (
@@ -283,7 +283,7 @@ export default function Footer({ currentSection, onNavigate }: FooterProps) {
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.3, rotate: 10 }}
                   whileTap={{ scale: 0.85 }}
-                  className="text-red-500 hover:text-red-400 transition-colors drop-shadow-lg"
+                  className="text-amber-500 hover:text-amber-400 transition-colors drop-shadow-lg"
                   title={link.label}
                 >
                   <link.Icon />
@@ -297,29 +297,29 @@ export default function Footer({ currentSection, onNavigate }: FooterProps) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className="group relative p-6 rounded-2xl border border-red-500/20 hover:border-red-500/50 transition-all duration-300 backdrop-blur-sm hover:bg-red-500/5"
+            className="group relative p-6 rounded-2xl border border-amber-500/20 hover:border-amber-500/50 transition-all duration-300 backdrop-blur-sm hover:bg-amber-500/5"
           >
             <motion.div
-              className="absolute inset-0 bg-gradient-to-br from-red-600/0 via-transparent to-red-500/0 opacity-0 group-hover:opacity-100 rounded-2xl transition-opacity duration-500"
+              className="absolute inset-0 bg-gradient-to-br from-amber-600/0 via-transparent to-amber-500/0 opacity-0 group-hover:opacity-100 rounded-2xl transition-opacity duration-500"
             />
 
-            <h3 className="text-lg font-black mb-5 text-red-400 drop-shadow-lg relative z-10">
+            <h3 className="text-lg font-black mb-5 text-amber-400 drop-shadow-lg relative z-10">
               📞 Contacto
             </h3>
             <div className="text-sm text-zinc-300 space-y-3 relative z-10">
               <motion.div
-                className="p-2 rounded-lg bg-red-500/10 border border-red-500/20 hover:border-red-500/40 transition-all"
+                className="p-2 rounded-lg bg-amber-500/10 border border-amber-500/20 hover:border-amber-500/40 transition-all"
                 whileHover={{ scale: 1.05 }}
               >
-                <p className="text-xs text-red-400 font-semibold mb-1">Email</p>
-                <p className="text-zinc-200">jeananderson2208@gmail.com</p>
+                <p className="text-xs text-amber-400 font-semibold mb-1">Email</p>
+                <p className="text-zinc-200">correo@gmail.com</p>
               </motion.div>
               <motion.div
-                className="p-2 rounded-lg bg-red-500/10 border border-red-500/20 hover:border-red-500/40 transition-all"
+                className="p-2 rounded-lg bg-amber-500/10 border border-amber-500/20 hover:border-amber-500/40 transition-all"
                 whileHover={{ scale: 1.05 }}
               >
-                <p className="text-xs text-red-400 font-semibold mb-1">Teléfono</p>
-                <p className="text-zinc-200">+57 316 316 9143</p>
+                <p className="text-xs text-amber-400 font-semibold mb-1">Teléfono</p>
+                <p className="text-zinc-200">+57 300 000 00 00</p>
               </motion.div>
             </div>
           </motion.div>
@@ -333,19 +333,19 @@ export default function Footer({ currentSection, onNavigate }: FooterProps) {
           transition={{ delay: 0.5 }}
         >
           <motion.div
-            className="h-px flex-grow bg-gradient-to-r from-transparent to-red-500/40"
+            className="h-px flex-grow bg-gradient-to-r from-transparent to-amber-500/40"
             animate={{ scaleX: [0, 1] }}
             transition={{ duration: 1, delay: 0.6 }}
           />
           <motion.div
-            className="text-red-500/60"
+            className="text-amber-500/60"
             animate={{ opacity: [0.3, 0.8, 0.3] }}
             transition={{ duration: 3, repeat: Infinity }}
           >
             ❤️ 🐾 ❤️
           </motion.div>
           <motion.div
-            className="h-px flex-grow bg-gradient-to-l from-transparent to-red-500/40"
+            className="h-px flex-grow bg-gradient-to-l from-transparent to-amber-500/40"
             animate={{ scaleX: [0, 1] }}
             transition={{ duration: 1, delay: 0.6 }}
           />
@@ -358,7 +358,7 @@ export default function Footer({ currentSection, onNavigate }: FooterProps) {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.7 }}
         >
-          <p className="font-semibold text-red-400/80">© 2025 Mascoticas</p>
+          <p className="font-semibold text-amber-400/80">© 2025 The Puppy House</p>
           <p>Todos los derechos reservados. 🐕❤️</p>
         </motion.div>
       </div>

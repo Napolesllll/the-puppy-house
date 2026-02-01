@@ -39,7 +39,7 @@ const Contactanos = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="text-red-500">Contáct</span>anos
+            <span className="text-amber-500">Contáct</span>anos
           </h2>
           <p className="text-xl text-zinc-300 max-w-2xl mx-auto">
             Estamos aquí para ayudarte. Completa el formulario y nos pondremos en contacto contigo.
@@ -58,7 +58,7 @@ const Contactanos = () => {
                 <input
                   type="text"
                   id="name"
-                  className="w-full bg-zinc-800 border border-zinc-700 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-red-500"
+                  className="w-full bg-zinc-800 border border-zinc-700 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-amber-500"
                   placeholder="Tu nombre"
                 />
               </div>
@@ -68,7 +68,7 @@ const Contactanos = () => {
                 <input
                   type="email"
                   id="email"
-                  className="w-full bg-zinc-800 border border-zinc-700 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-red-500"
+                  className="w-full bg-zinc-800 border border-zinc-700 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-amber-500"
                   placeholder="tu@email.com"
                 />
               </div>
@@ -78,14 +78,14 @@ const Contactanos = () => {
                 <textarea
                   id="message"
                   rows={5}
-                  className="w-full bg-zinc-800 border border-zinc-700 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-red-500"
+                  className="w-full bg-zinc-800 border border-zinc-700 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-amber-500"
                   placeholder="Tu mensaje..."
                 ></textarea>
               </div>
               
               <button
                 type="submit"
-                className="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-lg transition-colors duration-300"
+                className="bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 px-8 rounded-lg transition-colors duration-300"
               >
                 Enviar Mensaje
               </button>
@@ -99,7 +99,7 @@ const Contactanos = () => {
             className="space-y-8"
           >
             <div className="flex items-start space-x-4">
-              <div className="text-red-500 text-2xl mt-1">📍</div>
+              <div className="text-amber-500 text-2xl mt-1">📍</div>
               <div>
                 <h3 className="text-xl font-bold mb-2">Ubicación</h3>
                 <p className="text-zinc-300">Av. Mascotas Felices 123, Ciudad Canina</p>
@@ -107,7 +107,7 @@ const Contactanos = () => {
             </div>
             
             <div className="flex items-start space-x-4">
-              <div className="text-red-500 text-2xl mt-1">📞</div>
+              <div className="text-amber-500 text-2xl mt-1">📞</div>
               <div>
                 <h3 className="text-xl font-bold mb-2">Teléfonos</h3>
                 <p className="text-zinc-300">+57 316 316 9143</p>
@@ -116,7 +116,7 @@ const Contactanos = () => {
             </div>
             
             <div className="flex items-start space-x-4">
-              <div className="text-red-500 text-2xl mt-1">✉️</div>
+              <div className="text-amber-500 text-2xl mt-1">✉️</div>
               <div>
                 <h3 className="text-xl font-bold mb-2">Email</h3>
                 <p className="text-zinc-300">jeananderson2208@gmail.com</p>

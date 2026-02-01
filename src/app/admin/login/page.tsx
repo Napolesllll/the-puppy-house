@@ -77,7 +77,7 @@ export default function AdminLogin() {
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                className="p-3 bg-red-500/20 border border-red-500/30 rounded-lg text-red-400 text-sm text-center"
+                className="p-3 bg-amber-500/20 border border-amber-500/30 rounded-lg text-amber-400 text-sm text-center"
               >
                 {error}
               </motion.div>

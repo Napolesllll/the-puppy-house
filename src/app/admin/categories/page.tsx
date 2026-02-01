@@ -55,7 +55,7 @@ export default function CategoriesAdmin() {
       setUploading(true);
       const formDataUpload = new FormData();
       formDataUpload.append("file", file);
-      formDataUpload.append("folder", "mascoticas-med/categories");
+      formDataUpload.append("folder", "the-puppy-house/categories");
 
       const res = await fetch("/api/upload", {
         method: "POST",
@@ -229,7 +229,7 @@ export default function CategoriesAdmin() {
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     onClick={() => handleDelete(category.id)}
-                    className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-red-500/20 hover:bg-red-500/30 text-red-400 rounded-lg transition-colors"
+                    className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-amber-500/20 hover:bg-amber-500/30 text-amber-400 rounded-lg transition-colors"
                   >
                     <Trash2 size={16} />
                     Eliminar

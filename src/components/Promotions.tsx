@@ -165,7 +165,7 @@ const Promotions = () => {
             <div className="flex items-center justify-center gap-3 mb-4">
               <Sparkles className="w-8 h-8 text-amber-400" />
               <h2 className="text-5xl md:text-6xl font-black bg-gradient-to-r from-amber-400 via-red-400 to-pink-400 bg-clip-text text-transparent">
-                Próximas Ofertas
+                Próximamente Ofertas Especiales
               </h2>
               <Sparkles className="w-8 h-8 text-amber-400" />
             </div>

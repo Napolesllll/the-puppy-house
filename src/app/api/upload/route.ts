@@ -17,7 +17,7 @@ export async function POST(request: NextRequest) {
     // Crear FormData para Cloudinary unsigned upload
     const cloudinaryFormData = new FormData();
     cloudinaryFormData.append('file', file);
-    cloudinaryFormData.append('upload_preset', 'mascoticas_med');
+    cloudinaryFormData.append('upload_preset', 'the_puppy_house');
     cloudinaryFormData.append('folder', folder);
 
     const cloudName = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME;

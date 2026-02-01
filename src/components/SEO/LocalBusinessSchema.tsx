@@ -7,10 +7,10 @@ interface LocalBusinessProps {
 }
 
 export const LocalBusinessSchema: React.FC<LocalBusinessProps> = ({
-  name = "Mascoticas Bucaramanga Medellin",
+  name = "The Puppy House Bucaramanga Medellin",
   address = "Bello, Bucaramanga, Antioquia, Colombia",
   phone = "+57 316 3169143",
-  email = "info@mascoticastmedellin.com",
+  email = "info@thepuppyhouse.com",
 }) => {
   const schema = {
     "@context": "https://schema.org",
@@ -26,14 +26,14 @@ export const LocalBusinessSchema: React.FC<LocalBusinessProps> = ({
     },
     telephone: phone,
     email: email,
-    url: "https://mascoticastmedellin.com",
+    url: "https://thepuppyhouse.com",
     openingHours: "Mo-Sa 08:00-18:00",
     priceRange: "$",
     servesCuisine: "Pet Store Services",
     hasMap: "https://goo.gl/maps/tu-ubicacion",
     sameAs: [
-      "https://www.facebook.com/mascoticastmedellin",
-      "https://www.instagram.com/mascoticastmedellin",
+      "https://www.facebook.com/thepuppyhouse",
+      "https://www.instagram.com/thepuppyhouse",
     ],
   };
 

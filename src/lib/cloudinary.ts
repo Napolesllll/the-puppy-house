@@ -15,7 +15,7 @@ export interface UploadResponse {
 
 export async function uploadToCloudinary(
   file: File,
-  folder: string = 'mascoticas-med'
+  folder: string = 'the-puppy-house'
 ): Promise<UploadResponse> {
   try {
     const bytes = await file.arrayBuffer();

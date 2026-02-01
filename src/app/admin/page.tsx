@@ -46,7 +46,7 @@ const AdminDashboard = () => {
           >
             <PawPrint className="w-8 h-8 text-amber-400" />
             <div>
-              <h1 className="text-2xl font-bold text-white">Mascoticas Admin</h1>
+              <h1 className="text-2xl font-bold text-white">The Puppy House Admin</h1>
               <p className="text-xs text-amber-400/70">Panel de administración</p>
             </div>
           </motion.div>
@@ -66,7 +66,7 @@ const AdminDashboard = () => {
                 await fetch("/api/admin/logout", { method: "POST" });
                 router.push("/admin/login");
               }}
-              className="flex items-center gap-2 px-4 py-2 rounded-lg bg-red-500/20 hover:bg-red-500/30 text-red-400 hover:text-red-300 transition-all font-medium text-sm shadow-lg shadow-red-500/20"
+              className="flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-500/20 hover:bg-amber-500/30 text-amber-400 hover:text-amber-300 transition-all font-medium text-sm shadow-lg shadow-amber-500/20"
             >
               <LogOut size={16} />
               Cerrar sesión

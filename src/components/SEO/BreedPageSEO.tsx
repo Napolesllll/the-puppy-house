@@ -25,7 +25,7 @@ export const generateBreedMetadata = ({
     }[category] || category;
 
   return {
-    title: `${breedName} en Medellín - Cachorros de Raza ${categoryText} | Mascoticas`,
+    title: `${breedName} en Medellín - Cachorros de Raza ${categoryText} | The Puppy House`,
     description: `🐕 Cachorros ${breedName} disponibles en Medellín. Raza ${categoryText} con pedigree certificado. ${
       description ? description.slice(0, 100) : "Garantía sanitaria completa"
     }. ✅ Entrega responsable.`,

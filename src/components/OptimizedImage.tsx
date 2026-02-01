@@ -39,8 +39,8 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
 
   // Generar alt text más descriptivo para SEO
   const optimizedAlt = breedName
-    ? `${breedName} - ${alt} - Mascoticas Medellín criadero certificado`
-    : `${alt} - Mascoticas Medellín cachorros de raza pura`;
+    ? `${breedName} - ${alt} - The Puppy House criadero certificado`
+    : `${alt} - The Puppy House cachorros de raza pura`;
 
   if (hasError) {
     return (

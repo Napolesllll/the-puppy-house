@@ -154,7 +154,7 @@ export default function BreedsAdmin() {
       setUploading(true);
       const formDataUpload = new FormData();
       formDataUpload.append("file", file);
-      formDataUpload.append("folder", "mascoticas-med/breeds");
+      formDataUpload.append("folder", "the-puppy-house/breeds");
 
       const res = await fetch("/api/upload", {
         method: "POST",
@@ -195,7 +195,7 @@ export default function BreedsAdmin() {
       for (const file of filesToUpload) {
         const formDataUpload = new FormData();
         formDataUpload.append("file", file);
-        formDataUpload.append("folder", "mascoticas-med/breeds/gallery");
+        formDataUpload.append("folder", "the-puppy-house/breeds/gallery");
 
         const res = await fetch("/api/upload", {
           method: "POST",
@@ -396,7 +396,7 @@ export default function BreedsAdmin() {
                   {searchTerm && (
                     <button
                       onClick={() => setSearchTerm("")}
-                      className="text-xs px-3 py-1 bg-red-500/20 hover:bg-red-500/30 text-red-400 rounded transition-colors"
+                      className="text-xs px-3 py-1 bg-amber-500/20 hover:bg-amber-500/30 text-amber-400 rounded transition-colors"
                     >
                       Limpiar búsqueda
                     </button>
@@ -525,7 +525,7 @@ export default function BreedsAdmin() {
                                   <motion.button
                                     whileHover={{ scale: 1.05 }}
                                     onClick={() => handleDelete(breed.id)}
-                                    className="flex-1 flex items-center justify-center gap-0.5 px-1.5 py-1 bg-red-500/20 hover:bg-red-500/30 text-red-400 rounded text-xs"
+                                    className="flex-1 flex items-center justify-center gap-0.5 px-1.5 py-1 bg-amber-500/20 hover:bg-amber-500/30 text-amber-400 rounded text-xs"
                                   >
                                     <Trash2 size={10} />
                                     Eliminar
@@ -748,7 +748,7 @@ export default function BreedsAdmin() {
                           onClick={() => removeImage(index)}
                           className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity rounded-lg"
                         >
-                          <X size={20} className="text-red-400" />
+                          <X size={20} className="text-amber-400" />
                         </button>
                       </div>
                     ))}

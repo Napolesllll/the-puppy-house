@@ -67,7 +67,7 @@ export default function SobreNosotros() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
-          <span className="text-red-500">Sobre</span> Nosotros
+          <span className="text-amber-500">Sobre</span> Nosotros
         </motion.h1>
 
         {/* Descripción */}
@@ -78,7 +78,7 @@ export default function SobreNosotros() {
           transition={{ duration: 1 }}
         >
           <p className="text-lg text-zinc-300 mb-6">
-            En Mascoticas nos apasiona ayudar a las personas a encontrar a su mejor amigo peludo.
+            En The Puppy House nos apasiona ayudar a las personas a encontrar a su mejor amigo peludo.
             Nuestra misión es conectar a las familias con cachorros de razas puras, ofreciéndoles
             un proceso de adopción transparente y lleno de amor.
           </p>

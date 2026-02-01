@@ -45,7 +45,7 @@ const LoadingScreen = () => {
       initial={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.8 }}
-      className="fixed inset-0 z-[9999] flex items-center justify-center bg-gradient-to-tr from-black via-zinc-900 to-red-950 text-white overflow-hidden"
+      className="fixed inset-0 z-[9999] flex items-center justify-center bg-gradient-to-tr from-black via-zinc-900 to-amber-950 text-white overflow-hidden"
     >
       {/* Animated grid background */}
       <div className="absolute inset-0 overflow-hidden">
@@ -61,7 +61,7 @@ const LoadingScreen = () => {
 
       {/* Animated orbs in background */}
       <motion.div
-        className="absolute top-10 sm:top-20 left-10 sm:left-20 w-32 sm:w-48 h-32 sm:h-48 rounded-full bg-red-500 blur-3xl opacity-20"
+        className="absolute top-10 sm:top-20 left-10 sm:left-20 w-32 sm:w-48 h-32 sm:h-48 rounded-full bg-amber-500 blur-3xl opacity-20"
         animate={{
           y: [0, 30, 0],
           x: [0, -20, 0],
@@ -124,7 +124,7 @@ const LoadingScreen = () => {
         >
           {/* Rotating background ring */}
           <motion.div
-            className="absolute inset-0 rounded-full border-2 border-transparent border-t-red-500 border-r-pink-500"
+            className="absolute inset-0 rounded-full border-2 border-transparent border-t-amber-500 border-r-pink-500"
             animate={{ rotate: 360 }}
             transition={{
               duration: 6,
@@ -135,7 +135,7 @@ const LoadingScreen = () => {
 
           {/* Pulsing glow */}
           <motion.div
-            className="absolute inset-0 rounded-full bg-red-500 blur-2xl opacity-30"
+            className="absolute inset-0 rounded-full bg-amber-500 blur-2xl opacity-30"
             animate={{
               scale: [1, 1.2, 1],
               opacity: [0.2, 0.4, 0.2],
@@ -160,10 +160,10 @@ const LoadingScreen = () => {
           >
             <Image
               src="/LOGO.png"
-              alt="Mascoticas"
+              alt="The Puppy House"
               width={150}
               height={150}
-              className="object-contain rounded-2xl border-3 border-red-500 shadow-2xl shadow-red-900/80 relative z-10 sm:w-52 sm:h-52"
+              className="object-contain rounded-2xl border-3 border-amber-500 shadow-2xl shadow-amber-900/80 relative z-10 sm:w-52 sm:h-52"
               priority
             />
           </motion.div>
@@ -182,13 +182,13 @@ const LoadingScreen = () => {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <span className="bg-gradient-to-r from-red-400 via-red-500 to-pink-500 bg-clip-text text-transparent drop-shadow-2xl">
-              Mascoticas
+            <span className="bg-gradient-to-r from-amber-400 via-amber-500 to-pink-500 bg-clip-text text-transparent drop-shadow-2xl">
+              The Puppy House
             </span>
           </motion.h1>
 
           <motion.p
-            className="text-lg sm:text-2xl font-semibold text-red-300 mb-4 sm:mb-6"
+            className="text-lg sm:text-2xl font-semibold text-amber-300 mb-4 sm:mb-6"
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.5 }}
@@ -229,9 +229,9 @@ const LoadingScreen = () => {
           animate={{ opacity: 1, scaleX: 1 }}
           transition={{ duration: 0.8, delay: 0.7 }}
         >
-          <div className="relative h-2 bg-zinc-800 rounded-full overflow-hidden border border-red-500/50">
+          <div className="relative h-2 bg-zinc-800 rounded-full overflow-hidden border border-amber-500/50">
             <motion.div
-              className="h-full bg-gradient-to-r from-red-500 via-pink-500 to-red-600"
+              className="h-full bg-gradient-to-r from-amber-500 via-pink-500 to-amber-600"
               initial={{ width: "0%" }}
               animate={{ width: `${Math.min(progress, 90)}%` }}
               transition={{
@@ -259,7 +259,7 @@ const LoadingScreen = () => {
 
         {/* Decorative line */}
         <motion.div
-          className="w-16 sm:w-24 h-1 bg-gradient-to-r from-red-500/0 via-red-500 to-red-500/0 rounded-full"
+          className="w-16 sm:w-24 h-1 bg-gradient-to-r from-amber-500/0 via-amber-500 to-amber-500/0 rounded-full"
           animate={{
             scale: [1, 1.3, 1],
             opacity: [0.5, 1, 0.5],
@@ -312,7 +312,7 @@ const LoadingScreen = () => {
         {Array.from({ length: 20 }).map((_, i) => (
           <motion.div
             key={i}
-            className="absolute w-1 h-1 bg-red-500 rounded-full"
+            className="absolute w-1 h-1 bg-amber-500 rounded-full"
             style={{
               left: `${(i * 5 + 7) % 100}%`,
               bottom: `-10px`,

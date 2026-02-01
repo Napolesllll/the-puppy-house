@@ -40,11 +40,11 @@ const BreedCard = ({
         transition={{ duration: 0.6, delay }}
         whileHover="hover"
         variants={cardVariants}
-        className="group relative rounded-2xl overflow-hidden shadow-2xl shadow-red-900/50 bg-gradient-to-br from-zinc-800 to-zinc-900 text-white cursor-pointer border border-red-500/20 hover:border-red-500/50 transition-all h-full"
+        className="group relative rounded-2xl overflow-hidden shadow-2xl shadow-amber-900/50 bg-gradient-to-br from-zinc-800 to-zinc-900 text-white cursor-pointer border border-amber-500/20 hover:border-amber-500/50 transition-all h-full"
       >
         {/* Glow effect background */}
         <motion.div
-          className="absolute inset-0 bg-gradient-to-br from-red-600/0 via-red-500/0 to-red-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"
+          className="absolute inset-0 bg-gradient-to-br from-amber-600/0 via-amber-500/0 to-amber-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"
         />
 
         <div className="relative h-72 w-full overflow-hidden">
@@ -63,9 +63,9 @@ const BreedCard = ({
             transition={{ duration: 2, repeat: Infinity }}
             className="flex justify-center mb-3"
           >
-            <PawPrint className="text-red-500 drop-shadow-lg" size={32} />
+            <PawPrint className="text-amber-500 drop-shadow-lg" size={32} />
           </motion.div>
-          <h3 className="text-2xl font-black mb-2 bg-gradient-to-r from-red-300 via-red-400 to-red-500 bg-clip-text text-transparent">
+          <h3 className="text-2xl font-black mb-2 bg-gradient-to-r from-amber-300 via-amber-400 to-amber-500 bg-clip-text text-transparent">
             {title}
           </h3>
           <p className="text-sm text-zinc-300 group-hover:text-zinc-100 transition-colors">
@@ -158,7 +158,7 @@ const ClientesModal = ({
               e.stopPropagation();
               onClose();
             }}
-            className="absolute top-4 right-4 z-20 bg-red-500 hover:bg-red-600 text-white rounded-full p-2 transition-colors shadow-lg"
+            className="absolute top-4 right-4 z-20 bg-amber-500 hover:bg-amber-600 text-white rounded-full p-2 transition-colors shadow-lg"
           >
             <X size={20} />
           </button>
@@ -167,7 +167,7 @@ const ClientesModal = ({
             <div className="text-center mb-8">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
                 Nuestros{" "}
-                <span className="text-red-500">Clientes Satisfechos</span>
+                <span className="text-amber-500">Clientes Satisfechos</span>
               </h2>
               <p className="text-zinc-300">
                 Familias felices que han encontrado a su compañero perfecto
@@ -222,7 +222,7 @@ const ClientesModal = ({
                 <div
                   key={index}
                   className={`h-2 w-8 rounded-full transition-all duration-300 ${
-                    index === activeIndex ? "bg-red-500" : "bg-zinc-600"
+                    index === activeIndex ? "bg-amber-500" : "bg-zinc-600"
                   }`}
                 />
               ))}
@@ -239,7 +239,7 @@ const ClientesModal = ({
                   className="bg-zinc-800/50 backdrop-blur-sm rounded-xl p-6 border border-zinc-700"
                 >
                   <div className="mb-4">
-                    <h3 className="font-bold text-lg text-red-400">
+                    <h3 className="font-bold text-lg text-amber-400">
                       {testimonio.nombre}
                     </h3>
                     <p className="text-sm text-zinc-400">
@@ -296,7 +296,7 @@ const BreedSections = () => {
       <section className="relative bg-gradient-to-b from-black via-zinc-950 to-black py-20 px-6 overflow-hidden">
         {/* Animated background orbs */}
         <motion.div
-          className="absolute top-20 -left-40 w-96 h-96 bg-red-600/20 rounded-full blur-3xl opacity-30"
+          className="absolute top-20 -left-40 w-96 h-96 bg-amber-600/20 rounded-full blur-3xl opacity-30"
           animate={{
             y: [0, 40, 0],
             x: [0, 20, 0],
@@ -309,7 +309,7 @@ const BreedSections = () => {
         />
 
         <motion.div
-          className="absolute bottom-20 -right-40 w-96 h-96 bg-red-500/15 rounded-full blur-3xl opacity-30"
+          className="absolute bottom-20 -right-40 w-96 h-96 bg-amber-500/15 rounded-full blur-3xl opacity-30"
           animate={{
             y: [0, -40, 0],
             x: [0, -20, 0],
@@ -353,7 +353,7 @@ const BreedSections = () => {
               }}
             >
               <h2 className="text-5xl md:text-6xl font-black text-white mb-4 drop-shadow-lg">
-                <span className="bg-gradient-to-r from-red-300 via-red-500 to-red-700 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-amber-300 via-amber-500 to-amber-700 bg-clip-text text-transparent">
                   Explora por Tamaño
                 </span>
               </h2>
@@ -367,13 +367,13 @@ const BreedSections = () => {
               transition={{ delay: 0.3 }}
             >
               <motion.div
-                className="w-12 h-1 bg-gradient-to-r from-transparent to-red-500"
+                className="w-12 h-1 bg-gradient-to-r from-transparent to-amber-500"
                 animate={{ scaleX: [0, 1] }}
                 transition={{ duration: 0.8, delay: 0.5 }}
               />
-              <span className="text-red-400 font-semibold text-sm">Encuentre su compañero perfecto</span>
+              <span className="text-amber-400 font-semibold text-sm">Encuentre su compañero perfecto</span>
               <motion.div
-                className="w-12 h-1 bg-gradient-to-l from-transparent to-red-500"
+                className="w-12 h-1 bg-gradient-to-l from-transparent to-amber-500"
                 animate={{ scaleX: [0, 1] }}
                 transition={{ duration: 0.8, delay: 0.5 }}
               />
@@ -414,12 +414,12 @@ const BreedSections = () => {
             <motion.div
               whileHover="hover"
               variants={cardVariants}
-              className="group relative rounded-2xl overflow-hidden shadow-2xl shadow-red-900/60 bg-gradient-to-br from-zinc-800 to-zinc-900 text-white cursor-pointer max-w-sm border border-red-500/30 hover:border-red-500/60 transition-all"
+              className="group relative rounded-2xl overflow-hidden shadow-2xl shadow-amber-900/60 bg-gradient-to-br from-zinc-800 to-zinc-900 text-white cursor-pointer max-w-sm border border-amber-500/30 hover:border-amber-500/60 transition-all"
               onClick={() => setIsModalOpen(true)}
             >
               {/* Animated glow effect */}
               <motion.div
-                className="absolute inset-0 bg-gradient-to-br from-red-600/20 via-transparent to-red-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"
+                className="absolute inset-0 bg-gradient-to-br from-amber-600/20 via-transparent to-amber-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"
               />
 
               <div className="relative h-72 w-full overflow-hidden">
@@ -452,9 +452,9 @@ const BreedSections = () => {
                   transition={{ duration: 2, repeat: Infinity }}
                   className="mb-3"
                 >
-                  <Heart className="mx-auto text-red-500 drop-shadow-lg" size={32} />
+                  <Heart className="mx-auto text-amber-500 drop-shadow-lg" size={32} />
                 </motion.div>
-                <h3 className="text-2xl font-black mb-2 bg-gradient-to-r from-red-300 to-red-500 bg-clip-text text-transparent">
+                <h3 className="text-2xl font-black mb-2 bg-gradient-to-r from-amber-300 to-amber-500 bg-clip-text text-transparent">
                   Clientes Satisfechos
                 </h3>
                 <p className="text-sm text-zinc-300 group-hover:text-zinc-100 transition-colors">

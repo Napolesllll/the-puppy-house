@@ -56,18 +56,18 @@ const PaymentMethods = () => {
       name: "Mastercard",
       src: "https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg",
       bgColor: "bg-white",
-      borderColor: "border-red-500/30",
-      hoverBorder: "hover:border-red-500/60",
-      shadowColor: "hover:shadow-red-500/20",
+      borderColor: "border-amber-500/30",
+      hoverBorder: "hover:border-amber-500/60",
+      shadowColor: "hover:shadow-amber-500/20",
       filter: "",
     },
     {
       name: "Mercado Pago",
       src: "https://static.wikia.nocookie.net/logopedia/images/7/79/Logotipo_de_Mercado_Pago_alternativo.svg/revision/latest/scale-to-width-down/250?cb=20250802020358&path-prefix=es",
       bgColor: "bg-white",
-      borderColor: "border-red-500/30",
-      hoverBorder: "hover:border-red-500/60",
-      shadowColor: "hover:shadow-red-500/20",
+      borderColor: "border-amber-500/30",
+      hoverBorder: "hover:border-amber-500/60",
+      shadowColor: "hover:shadow-amber-500/20",
       filter: "",
     },
     {
@@ -83,9 +83,9 @@ const PaymentMethods = () => {
       name: "Bancolombia",
       src: "https://vectorseek.com/wp-content/uploads/2023/09/Bancolombia-Icon-Logo-Vector.svg-.png",
       bgColor: "bg-white",
-      borderColor: "border-red-600/30",
-      hoverBorder: "hover:border-red-600/60",
-      shadowColor: "hover:shadow-red-600/20",
+      borderColor: "border-amber-600/30",
+      hoverBorder: "hover:border-amber-600/60",
+      shadowColor: "hover:shadow-amber-600/20",
       filter: "",
     },
     {
@@ -108,8 +108,8 @@ const PaymentMethods = () => {
       </div>
 
       {/* Decorative elements */}
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-red-500/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-red-600/5 rounded-full blur-3xl" />
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-amber-500/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-amber-600/5 rounded-full blur-3xl" />
 
       <div className="relative max-w-7xl mx-auto">
         {/* Header section */}
@@ -121,17 +121,17 @@ const PaymentMethods = () => {
           className="text-center mb-24"
         >
           <div className="flex items-center justify-center gap-2 mb-6">
-            <div className="h-1 w-12 bg-gradient-to-r from-transparent to-red-500" />
-            <span className="text-sm font-semibold text-red-400 uppercase tracking-[0.15em]">
+            <div className="h-1 w-12 bg-gradient-to-r from-transparent to-amber-500" />
+            <span className="text-sm font-semibold text-amber-400 uppercase tracking-[0.15em]">
               Métodos de Pago
             </span>
-            <div className="h-1 w-12 bg-gradient-to-l from-transparent to-red-500" />
+            <div className="h-1 w-12 bg-gradient-to-l from-transparent to-amber-500" />
           </div>
           
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-black mb-8 bg-gradient-to-r from-red-50 via-white to-red-100 bg-clip-text text-transparent leading-tight">
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-black mb-8 bg-gradient-to-r from-amber-50 via-white to-amber-100 bg-clip-text text-transparent leading-tight">
             Formas de Pago
             <br />
-            <span className="text-transparent bg-gradient-to-r from-red-400 to-red-600 bg-clip-text">
+            <span className="text-transparent bg-gradient-to-r from-amber-400 to-amber-600 bg-clip-text">
               Seguras y Confiables
             </span>
           </h2>
@@ -295,7 +295,7 @@ const PaymentMethods = () => {
                   <motion.button
                     whileHover={{ scale: 1.05, boxShadow: `0 20px 40px rgba(59, 130, 246, 0.4)` }}
                     whileTap={{ scale: 0.95 }}
-                    onClick={() => window.location.href = 'https://link.mercadopago.com.co/jeanpierremartinez'}
+                    onClick={() => window.location.href = 'https://link.mercadopago.com.co/'}
                     className={`w-full py-4 rounded-xl bg-gradient-to-r ${method.color} text-white font-bold text-sm uppercase tracking-[0.1em] transition-all duration-300 shadow-lg hover:shadow-2xl relative overflow-hidden group/btn`}
                   >
                     <span className="relative z-10 flex items-center justify-center gap-2">

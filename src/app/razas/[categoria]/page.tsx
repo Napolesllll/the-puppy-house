@@ -235,7 +235,7 @@ export default function RazaPage() {
           </div>
         ) : error ? (
           <div className="flex justify-center items-center py-20">
-            <p className="text-xl text-red-400">{error}</p>
+            <p className="text-xl text-amber-400">{error}</p>
           </div>
         ) : breeds.length === 0 ? (
           <div className="flex justify-center items-center py-20">

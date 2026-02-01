@@ -113,15 +113,15 @@ const HomeHero = () => {
 
   return (
     <section
-      className="relative w-full h-screen bg-gradient-to-b from-black via-gray-900 to-red-900 text-white overflow-hidden flex flex-col justify-center items-center px-4"
-      aria-label="Bienvenida a Mascoticas"
+      className="relative w-full h-screen bg-gradient-to-b from-black via-gray-900 to-amber-900 text-white overflow-hidden flex flex-col justify-center items-center px-4"
+      aria-label="Bienvenida a The Puppy House"
     >
       {/* Efecto de chispas rojas - usar datos estáticos */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {staticSparks.map((spark) => (
           <motion.div
             key={spark.id}
-            className="absolute rounded-full bg-red-500"
+            className="absolute rounded-full bg-amber-500"
             style={{
               left: `${spark.left}%`,
               top: `${spark.top}%`,
@@ -148,7 +148,7 @@ const HomeHero = () => {
           {hearts.map((heart) => (
             <motion.div
               key={`heart-${heart.id}`}
-              className="absolute text-red-400"
+              className="absolute text-amber-400"
               style={{
                 left: `${heart.x}%`,
                 top: `${heart.y}%`,
@@ -197,8 +197,8 @@ const HomeHero = () => {
           transition={{ duration: 1, delay: 0.3 }}
         >
           <span className="text-white">Bienvenido a </span>
-          <span className="text-red-500 drop-shadow-[0_0_8px_rgba(239,68,68,0.7)]">
-            Mascoticas
+          <span className="text-amber-500 drop-shadow-[0_0_8px_rgba(239,68,68,0.7)]">
+            The Puppy House
           </span>
         </motion.h1>
 
@@ -209,7 +209,7 @@ const HomeHero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.4 }}
         >
-          Donde los <span className="text-red-300">mejores amigos</span> te
+          Donde los <span className="text-amber-300">mejores amigos</span> te
           esperan
         </motion.h2>
 
@@ -226,13 +226,13 @@ const HomeHero = () => {
             repeatType: "loop",
           }}
         >
-          <div className="absolute inset-0 rounded-xl bg-red-500 blur-xl opacity-50 animate-pulse" />
+          <div className="absolute inset-0 rounded-xl bg-amber-500 blur-xl opacity-50 animate-pulse" />
           <Image
-            src="/LOGO.png"
-            alt="Mascoticas - Especialistas en adopción de mascotas"
+            src="/thepuppyhouselogo.png"
+            alt="The Puppy House - Especialistas en adopción de mascotas"
             width={200}
             height={200}
-            className="object-contain rounded-xl relative z-10 border-2 border-red-500 shadow-lg shadow-red-900/50"
+            className="object-contain rounded-xl relative z-10 border-2 border-amber-500 shadow-lg shadow-amber-900/50"
             priority
           />
         </motion.div>
@@ -245,7 +245,7 @@ const HomeHero = () => {
           transition={{ duration: 1, delay: 0.5 }}
         >
           <motion.p
-            className="text-lg md:text-xl text-white/80 max-w-2xl px-4 mb-4 border-l-4 border-red-500 pl-4 py-2 bg-black/20"
+            className="text-lg md:text-xl text-white/80 max-w-2xl px-4 mb-4 border-l-4 border-amber-500 pl-4 py-2 bg-black/20"
             initial={{ width: 0 }}
             animate={{ width: "100%" }}
             transition={{ duration: 1.5, delay: 0.7 }}
@@ -265,7 +265,7 @@ const HomeHero = () => {
           {[...Array(5)].map((_, i) => (
             <motion.div
               key={i}
-              className="w-2 h-2 bg-red-500 rounded-full"
+              className="w-2 h-2 bg-amber-500 rounded-full"
               animate={{
                 y: [0, -10, 0],
                 opacity: [0.5, 1, 0.5],
@@ -282,19 +282,19 @@ const HomeHero = () => {
 
       {/* Efecto de neblina roja en la parte inferior */}
       <motion.div
-        className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-red-900/80 to-transparent z-5"
+        className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-amber-900/80 to-transparent z-5"
         animate={{ opacity: [0.6, 0.8, 0.6] }}
         transition={{ duration: 4, repeat: Infinity }}
       />
 
       {/* Efecto de destellos laterales */}
       <motion.div
-        className="absolute top-1/4 -left-20 w-60 h-60 rounded-full bg-red-600 blur-[100px] opacity-30"
+        className="absolute top-1/4 -left-20 w-60 h-60 rounded-full bg-amber-600 blur-[100px] opacity-30"
         animate={{ opacity: [0.2, 0.4, 0.2] }}
         transition={{ duration: 5, repeat: Infinity }}
       />
       <motion.div
-        className="absolute bottom-1/3 -right-20 w-60 h-60 rounded-full bg-red-600 blur-[100px] opacity-30"
+        className="absolute bottom-1/3 -right-20 w-60 h-60 rounded-full bg-amber-600 blur-[100px] opacity-30"
         animate={{ opacity: [0.2, 0.4, 0.2] }}
         transition={{ duration: 5, repeat: Infinity, delay: 1 }}
       />
