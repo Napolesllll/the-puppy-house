@@ -2,7 +2,7 @@
 
 **Proyecto:** Reemplazo completo de marca "Mascoticas"  
 **Método:** Visual flowchart del proceso  
-**Tiempo:** Referencia rápida  
+**Tiempo:** Referencia rápida
 
 ---
 

@@ -2,13 +2,14 @@
 
 **Método:** Usar VS Code Find & Replace (Método más eficiente)  
 **Tiempo estimado:** 45 minutos  
-**Dificultad:** ⭐ Muy fácil  
+**Dificultad:** ⭐ Muy fácil
 
 ---
 
 ## 🎯 ANTES DE EMPEZAR
 
 ### Paso 0: Preparación
+
 ```bash
 # 1. Abre el proyecto en VS Code
 # 2. Asegúrate de que Git esté inicializado
@@ -30,14 +31,14 @@ npm run build  # Opcional, pero bueno para verificar
 
 ```javascript
 // Completa estas variables
-const miMarca = "AQUÍ_EL_NOMBRE_DE_TU_MARCA";        // Ej: "PetVibe"
-const miDominio = "AQUÍ_TU_DOMINIO";                  // Ej: "https://petvibe.com"
-const miEmail = "AQUÍ_TU_EMAIL";                      // Ej: "info@petvibe.com"
-const miUbicacion = "AQUÍ_TU_UBICACIÓN";              // Ej: "Medellín, Colombia"
-const miTwitter = "AQUÍ_TU_TWITTER";                  // Ej: "@PetVibeMed"
-const miFacebook = "AQUÍ_TU_FACEBOOK";                // Ej: "petvibemedellin"
-const miInstagram = "AQUÍ_TU_INSTAGRAM";              // Ej: "petvibemedellin"
-const miCarpetaCloudinary = "AQUÍ_CARPETA_NUEVA";    // Ej: "petvibe-med"
+const miMarca = "AQUÍ_EL_NOMBRE_DE_TU_MARCA"; // Ej: "PetVibe"
+const miDominio = "AQUÍ_TU_DOMINIO"; // Ej: "https://petvibe.com"
+const miEmail = "AQUÍ_TU_EMAIL"; // Ej: "info@petvibe.com"
+const miUbicacion = "AQUÍ_TU_UBICACIÓN"; // Ej: "Medellín, Colombia"
+const miTwitter = "AQUÍ_TU_TWITTER"; // Ej: "@PetVibeMed"
+const miFacebook = "AQUÍ_TU_FACEBOOK"; // Ej: "petvibemedellin"
+const miInstagram = "AQUÍ_TU_INSTAGRAM"; // Ej: "petvibemedellin"
+const miCarpetaCloudinary = "AQUÍ_CARPETA_NUEVA"; // Ej: "petvibe-med"
 ```
 
 ---
@@ -47,9 +48,10 @@ const miCarpetaCloudinary = "AQUÍ_CARPETA_NUEVA";    // Ej: "petvibe-med"
 ### PASO 1: Find & Replace #1 - Carpeta Cloudinary (2 min)
 
 **Buscar:** `mascoticas-med`  
-**Reemplazar por:** `[TU_CARPETA_CLOUDINARY]`  
+**Reemplazar por:** `[TU_CARPETA_CLOUDINARY]`
 
 **Instrucciones:**
+
 ```
 1. Abre VS Code (Ctrl+Shift+H para Find & Replace)
 2. En el campo "Find" escribe: mascoticas-med
@@ -71,9 +73,10 @@ const miCarpetaCloudinary = "AQUÍ_CARPETA_NUEVA";    // Ej: "petvibe-med"
 ### PASO 2: Find & Replace #2 - Dominio antiguo (3 min)
 
 **Buscar:** `mascoticasbucaramangamedellin.com`  
-**Reemplazar por:** `[TU_DOMINIO_SIN_HTTPS://]`  
+**Reemplazar por:** `[TU_DOMINIO_SIN_HTTPS://]`
 
 **Instrucciones:**
+
 ```
 1. Abre Find & Replace (Ctrl+Shift+H)
 2. Busca: mascoticasbucaramangamedellin.com
@@ -92,9 +95,10 @@ const miCarpetaCloudinary = "AQUÍ_CARPETA_NUEVA";    // Ej: "petvibe-med"
 ### PASO 3: Find & Replace #3 - Dominio alternativo (2 min)
 
 **Buscar:** `mascoticastmedellin.com`  
-**Reemplazar por:** `[TU_DOMINIO_SIN_HTTPS://]`  
+**Reemplazar por:** `[TU_DOMINIO_SIN_HTTPS://]`
 
 **Instrucciones:**
+
 ```
 1. Abre Find & Replace (Ctrl+Shift+H)
 2. Busca: mascoticastmedellin.com
@@ -112,9 +116,10 @@ const miCarpetaCloudinary = "AQUÍ_CARPETA_NUEVA";    // Ej: "petvibe-med"
 ### PASO 4: Find & Replace #4 - Email antiguo (2 min)
 
 **Buscar:** `info@mascoticastmedellin.com`  
-**Reemplazar por:** `[TU_EMAIL]`  
+**Reemplazar por:** `[TU_EMAIL]`
 
 **Instrucciones:**
+
 ```
 1. Abre Find & Replace (Ctrl+Shift+H)
 2. Busca: info@mascoticastmedellin.com
@@ -133,9 +138,10 @@ const miCarpetaCloudinary = "AQUÍ_CARPETA_NUEVA";    // Ej: "petvibe-med"
 ### PASO 5: Find & Replace #5 - Handle de Twitter (2 min)
 
 **Buscar:** `@MascoticanMedellin`  
-**Reemplazar por:** `@[TU_TWITTER_HANDLE]`  
+**Reemplazar por:** `@[TU_TWITTER_HANDLE]`
 
 **Instrucciones:**
+
 ```
 1. Abre Find & Replace (Ctrl+Shift+H)
 2. Busca: @MascoticanMedellin
@@ -153,9 +159,10 @@ const miCarpetaCloudinary = "AQUÍ_CARPETA_NUEVA";    // Ej: "petvibe-med"
 ### PASO 6: Find & Replace #6 - Redes sociales Facebook (2 min)
 
 **Buscar:** `mascoticastmedellin` (en URLs)  
-**Reemplazar por:** `[TU_FACEBOOK_USER]`  
+**Reemplazar por:** `[TU_FACEBOOK_USER]`
 
 **Instrucciones:**
+
 ```
 1. Abre Find & Replace (Ctrl+Shift+H)
 2. Busca: facebook.com/mascoticastmedellin
@@ -176,6 +183,7 @@ const miCarpetaCloudinary = "AQUÍ_CARPETA_NUEVA";    // Ej: "petvibe-med"
 **Busca las URLs de Instagram de Mascoticas y reemplázalas**
 
 **Instrucciones:**
+
 ```
 1. Abre Find & Replace (Ctrl+Shift+H)
 2. Busca: instagram.com/mascoticastmedellin
@@ -194,9 +202,10 @@ const miCarpetaCloudinary = "AQUÍ_CARPETA_NUEVA";    // Ej: "petvibe-med"
 ### PASO 8: Find & Replace #8 - Marca completa (5 min)
 
 **Buscar:** `Mascoticas Medellín`  
-**Reemplazar por:** `[TU_MARCA] [UBICACIÓN]`  
+**Reemplazar por:** `[TU_MARCA] [UBICACIÓN]`
 
 **Instrucciones:**
+
 ```
 1. Abre Find & Replace (Ctrl+Shift+H)
 2. Busca: Mascoticas Medellín
@@ -220,11 +229,12 @@ const miCarpetaCloudinary = "AQUÍ_CARPETA_NUEVA";    // Ej: "petvibe-med"
 ### PASO 9: Find & Replace #9 - Marca simple (5 min)
 
 **Buscar:** `Mascoticas`  
-**Reemplazar por:** `[TU_MARCA]`  
+**Reemplazar por:** `[TU_MARCA]`
 
 **ADVERTENCIA:** Este término es más común. Ser cuidadoso.
 
 **Instrucciones:**
+
 ```
 1. Abre Find & Replace (Ctrl+Shift+H)
 2. Busca: Mascoticas
@@ -249,6 +259,7 @@ const miCarpetaCloudinary = "AQUÍ_CARPETA_NUEVA";    // Ej: "petvibe-med"
 **Búsqueda manual:** `Bello, Bucaramanga`
 
 **Instrucciones:**
+
 ```
 1. Abre Find & Replace (Ctrl+Shift+H)
 2. Busca: Bello, Bucaramanga, Antioquia, Colombia
@@ -268,6 +279,7 @@ const miCarpetaCloudinary = "AQUÍ_CARPETA_NUEVA";    // Ej: "petvibe-med"
 **Búsqueda:** `Medellín` (en títulos específicos)
 
 **Instrucciones:**
+
 ```
 1. IMPORTANTE: NO cambies todos los "Medellín"
 2. Solo cambia en contexto de marca:
@@ -311,7 +323,7 @@ Abre el archivo y edita manualmente:
   "name": "Mascoticas Medellín",
   ↓
   "name": "[TU_MARCA]",
-  
+
   "short_name": "Mascoticas",
   ↓
   "short_name": "[ALIAS_CORTO]",
@@ -339,6 +351,7 @@ Si quieres actualizar el comentario:
 ## 🖼️ CAMBIO DE ASSETS
 
 ### Asset 1: Logo
+
 ```
 1. Prepara tu nuevo LOGO.png (150-200px ancho)
 2. Renómbralo como: LOGO.png
@@ -348,6 +361,7 @@ Si quieres actualizar el comentario:
 ```
 
 ### Asset 2: Favicon
+
 ```
 1. Prepara tu nuevo favicon (32x32px)
 2. Renómbralo como: favicon.ico
@@ -360,20 +374,24 @@ Si quieres actualizar el comentario:
 ## ✅ VERIFICACIÓN POST-CAMBIOS
 
 ### Test 1: Compilación
+
 ```bash
 npm run build
 ```
+
 **Resultado esperado:** ✓ Build exitoso sin errores
 
 ---
 
 ### Test 2: Ejecución local
+
 ```bash
 npm run dev
 # Abre: http://localhost:3000
 ```
 
 **Checklist visual:**
+
 - [ ] Logo aparece en navegación
 - [ ] Nombre de marca es correcto en página
 - [ ] Footer muestra nombre correcto
@@ -383,6 +401,7 @@ npm run dev
 ---
 
 ### Test 3: Admin panel
+
 ```
 1. Ve a http://localhost:3000/admin
 2. Verifica:
@@ -398,6 +417,7 @@ npm run dev
 ### Test 4: SEO Validation
 
 **Google Structured Data Test:**
+
 ```
 1. Ve a: https://search.google.com/structured-data
 2. Pega tu URL: http://localhost:3000
@@ -412,6 +432,7 @@ npm run dev
 ### Test 5: Meta Verification
 
 **Facebook Open Graph Debugger:**
+
 ```
 1. Ve a: https://developers.facebook.com/tools/debug/
 2. Pega URL: http://localhost:3000
@@ -497,12 +518,14 @@ git push origin feat/cambio-marca-2026
 ## 🚀 DEPLOYMENT
 
 ### Si usas Vercel:
+
 ```bash
 # El deployment es automático al hacer push a main
 git push origin main
 ```
 
 ### Si usas servidor propio:
+
 ```bash
 # Build para producción
 npm run build
@@ -542,9 +565,10 @@ Marca cada elemento antes de completar:
 
 ## ✨ ¡COMPLETADO!
 
-Una vez marques todo, ¡tu proyecto tendrá completamente nueva marca! 
+Una vez marques todo, ¡tu proyecto tendrá completamente nueva marca!
 
 Próximos pasos:
+
 1. Continúa con testing
 2. Notifica a tu equipo
 3. Haz deploy a producción

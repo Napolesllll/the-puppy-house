@@ -3,7 +3,7 @@
 export default function WhatsappButton() {
   return (
     <a
-      href="https://wa.me/573163169143?text=¡Hola!%20Estoy%20interesado%20en%20un%20cachorrito%20de%20raza"
+      href="https://wa.me/57310000000?text=¡Hola!%20Estoy%20interesado%20en%20un%20cachorrito%20de%20raza"
       target="_blank"
       rel="noopener noreferrer"
       className="fixed bottom-10 right-33 z-50 bg-green-500 hover:bg-green-600 text-white p-4 sm:p-4 md:p-5 rounded-full shadow-xl transition-transform duration-300 ease-in-out hover:scale-110 animate-in fade-in"

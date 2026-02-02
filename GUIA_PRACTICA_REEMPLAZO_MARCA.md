@@ -13,27 +13,27 @@
 // 🎯 VALORES A REEMPLAZAR
 // ========================================
 
-ANTIGUA_MARCA = "Mascoticas"
-ANTIGUA_MARCA_COMPLETA = "Mascoticas Medellín"
-ANTIGUA_UBICACION = "Bucaramanga, Medellín"
-ANTIGUA_MARCA_UBICACION = "Mascoticas Bucaramanga Medellin"
-ANTIGUO_EMAIL = "info@mascoticastmedellin.com"
-ANTIGUO_DOMINIO = "https://mascoticasbucaramangamedellin.com"
-ANTIGUO_DOMINIO_SIMPLE = "https://mascoticastmedellin.com"
-ANTIGUA_CARPETA_CLOUDINARY = "mascoticas-med"
-ANTIGUO_TWITTER = "@MascoticanMedellin"
+ANTIGUA_MARCA = "Mascoticas";
+ANTIGUA_MARCA_COMPLETA = "Mascoticas Medellín";
+ANTIGUA_UBICACION = "Bucaramanga, Medellín";
+ANTIGUA_MARCA_UBICACION = "Mascoticas Bucaramanga Medellin";
+ANTIGUO_EMAIL = "info@mascoticastmedellin.com";
+ANTIGUO_DOMINIO = "https://mascoticasbucaramangamedellin.com";
+ANTIGUO_DOMINIO_SIMPLE = "https://mascoticastmedellin.com";
+ANTIGUA_CARPETA_CLOUDINARY = "mascoticas-med";
+ANTIGUO_TWITTER = "@MascoticanMedellin";
 
 // NUEVOS VALORES (COMPLETA ESTOS)
-NUEVA_MARCA = "???"                        // Ej: "PetVibe", "DogLove"
-NUEVA_MARCA_COMPLETA = "???"               // Ej: "PetVibe Medellín"
-NUEVA_UBICACION = "???"                    // Ej: "Medellín, Colombia"
-NUEVA_EMAIL = "???"                        // Ej: "info@petvibe.com"
-NUEVO_DOMINIO = "???"                      // Ej: "https://petvibe.com"
-NUEVA_CARPETA_CLOUDINARY = "???"           // Ej: "petvibe-med"
-NUEVO_TWITTER = "???"                      // Ej: "@PetVibeMed"
-NUEVO_FACEBOOK = "???"                     // Ej: "petvibemedellin"
-NUEVO_INSTAGRAM = "???"                    // Ej: "petvibemedellin"
-NUEVA_BASE_DATOS = "???"                   // Ej: "petvibe_med"
+NUEVA_MARCA = "???"; // Ej: "PetVibe", "DogLove"
+NUEVA_MARCA_COMPLETA = "???"; // Ej: "PetVibe Medellín"
+NUEVA_UBICACION = "???"; // Ej: "Medellín, Colombia"
+NUEVA_EMAIL = "???"; // Ej: "info@petvibe.com"
+NUEVO_DOMINIO = "???"; // Ej: "https://petvibe.com"
+NUEVA_CARPETA_CLOUDINARY = "???"; // Ej: "petvibe-med"
+NUEVO_TWITTER = "???"; // Ej: "@PetVibeMed"
+NUEVO_FACEBOOK = "???"; // Ej: "petvibemedellin"
+NUEVO_INSTAGRAM = "???"; // Ej: "petvibemedellin"
+NUEVA_BASE_DATOS = "???"; // Ej: "petvibe_med"
 ```
 
 ---
@@ -45,6 +45,7 @@ NUEVA_BASE_DATOS = "???"                   // Ej: "petvibe_med"
 **Ubicación:** Raíz del proyecto
 
 **Cambio:**
+
 ```json
 // ANTES:
 {
@@ -66,6 +67,7 @@ NUEVA_BASE_DATOS = "???"                   // Ej: "petvibe_med"
 **Ubicación:** Línea 10 y referencias en metadatos
 
 **Cambio 1 - Variable URL (LÍNEA 10):**
+
 ```typescript
 // ANTES:
 const SITE_URL = "https://mascoticasbucaramangamedellin.com";
@@ -75,15 +77,17 @@ const SITE_URL = "https://tu-nuevo-dominio.com";
 ```
 
 **Cambio 2 - Título por defecto (LÍNEA 17):**
+
 ```typescript
 // ANTES:
-"Mascoticas Medellín - Venta de Cachorros de Raza Pura | Criadero Certificado"
+"Mascoticas Medellín - Venta de Cachorros de Raza Pura | Criadero Certificado";
 
 // DESPUÉS:
-"[TU_MARCA] Medellín - [TU_DESCRIPCIÓN_SERVICIO]"
+"[TU_MARCA] Medellín - [TU_DESCRIPCIÓN_SERVICIO]";
 ```
 
 **Cambio 3 - Template título (LÍNEA 18):**
+
 ```typescript
 // ANTES:
 template: "%s | Mascoticas Medellín",
@@ -93,6 +97,7 @@ template: "%s | [TU_MARCA]",
 ```
 
 **Cambio 4 - Creator/Publisher (LÍNEAS 39-40):**
+
 ```typescript
 // ANTES:
 creator: "Mascoticas Medellín - Criadero Certificado",
@@ -104,6 +109,7 @@ publisher: "[TU_MARCA]",
 ```
 
 **Cambio 5 - Open Graph (LÍNEA 62):**
+
 ```typescript
 // ANTES:
 siteName: "Mascoticas Medellín",
@@ -113,6 +119,7 @@ siteName: "[TU_MARCA]",
 ```
 
 **Cambio 6 - Twitter (LÍNEAS 80-82):**
+
 ```typescript
 // ANTES:
 site: "@MascoticanMedellin",
@@ -126,6 +133,7 @@ title: "[TU_MARCA] - [TU_DESCRIPCIÓN]",
 ```
 
 **Cambio 7 - Organization Schema (LÍNEAS 102-105):**
+
 ```typescript
 // ANTES:
 name: "Mascoticas Medellín",
@@ -139,6 +147,7 @@ logo: `${SITE_URL}/logo-[tu_nombre].png`,
 ```
 
 **Cambio 8 - Email de contacto (LÍNEA 126):**
+
 ```typescript
 // ANTES:
 email: "info@mascoticastmedellin.com",
@@ -148,6 +157,7 @@ email: "info@[tu_dominio].com",
 ```
 
 **Cambio 9 - Website Schema (LÍNEAS 210-212):**
+
 ```typescript
 // ANTES:
 name: "Mascoticas Medellín",
@@ -159,6 +169,7 @@ description: "[TU_DESCRIPCIÓN_LARGA]",
 ```
 
 **Cambio 10 - Google Analytics página (LÍNEA 303):**
+
 ```typescript
 // ANTES:
 page_title: 'Mascoticas Medellín',
@@ -168,6 +179,7 @@ page_title: '[TU_MARCA]',
 ```
 
 **Cambio 11 - Open Graph meta (LÍNEA 341):**
+
 ```typescript
 // ANTES:
 <meta property="og:site_name" content="Mascoticas Medellín" />
@@ -183,12 +195,13 @@ page_title: '[TU_MARCA]',
 **Ubicación:** Línea 18
 
 **Cambio:**
+
 ```typescript
 // ANTES:
-folder: string = 'mascoticas-med'
+folder: string = "mascoticas-med";
 
 // DESPUÉS:
-folder: string = 'tu-nueva-marca-med'
+folder: string = "tu-nueva-marca-med";
 ```
 
 ---
@@ -196,6 +209,7 @@ folder: string = 'tu-nueva-marca-med'
 ### 4. ✅ **src/components/SEO/LocalBusinessSchema.tsx**
 
 **Cambio 1 - Nombre negocio (LÍNEA 10):**
+
 ```typescript
 // ANTES:
 name = "Mascoticas Bucaramanga Medellin",
@@ -205,6 +219,7 @@ name = "[TU_MARCA] [TU_UBICACIÓN]",
 ```
 
 **Cambio 2 - Dirección (LÍNEA 11):**
+
 ```typescript
 // ANTES:
 address = "Bello, Bucaramanga, Antioquia, Colombia",
@@ -214,6 +229,7 @@ address = "[TU_CALLE], [TU_CIUDAD], [TU_ESTADO], [TU_PAÍS]",
 ```
 
 **Cambio 3 - Email (LÍNEA 13):**
+
 ```typescript
 // ANTES:
 email = "info@mascoticastmedellin.com",
@@ -223,6 +239,7 @@ email = "info@[tu_dominio].com",
 ```
 
 **Cambio 4 - URL (LÍNEA 29):**
+
 ```typescript
 // ANTES:
 url: "https://mascoticastmedellin.com",
@@ -232,6 +249,7 @@ url: "[TU_NUEVO_DOMINIO]",
 ```
 
 **Cambios 5-6 - Redes sociales (LÍNEAS 35-36):**
+
 ```typescript
 // ANTES:
 "https://www.facebook.com/mascoticastmedellin",
@@ -247,21 +265,21 @@ url: "[TU_NUEVO_DOMINIO]",
 ### 5. ✅ **src/components/Nav.tsx**
 
 **Cambio 1 - Alt de imagen (LÍNEA 107):**
+
 ```tsx
 // ANTES:
-alt="Logo Mascoticas"
+alt = "Logo Mascoticas";
 
 // DESPUÉS:
-alt="Logo [TU_MARCA]"
+alt = "Logo [TU_MARCA]";
 ```
 
 **Cambio 2 - Texto visual (LÍNEA 280):**
+
 ```tsx
 // ANTES:
-Mascoticas
-
 // DESPUÉS:
-[TU_MARCA]
+Mascoticas[TU_MARCA];
 ```
 
 ---
@@ -269,6 +287,7 @@ Mascoticas
 ### 6. ✅ **src/components/Footer.tsx**
 
 **Cambio 1 - Texto footer (LÍNEA 149):**
+
 ```tsx
 // ANTES:
 <span className="text-red-400 font-semibold text-xs">MASCOTICAS MEDELLÍN</span>
@@ -278,12 +297,13 @@ Mascoticas
 ```
 
 **Cambio 2 - Alt logo footer (LÍNEA 176):**
+
 ```tsx
 // ANTES:
-alt="Logo Mascoticas"
+alt = "Logo Mascoticas";
 
 // DESPUÉS:
-alt="Logo [TU_MARCA]"
+alt = "Logo [TU_MARCA]";
 ```
 
 ---
@@ -291,21 +311,21 @@ alt="Logo [TU_MARCA]"
 ### 7. ✅ **src/components/LoadingScreen.tsx**
 
 **Cambio 1 - Alt imagen (LÍNEA 163):**
+
 ```tsx
 // ANTES:
-alt="Mascoticas"
+alt = "Mascoticas";
 
 // DESPUÉS:
-alt="[TU_MARCA]"
+alt = "[TU_MARCA]";
 ```
 
 **Cambio 2 - Texto (LÍNEA 186):**
+
 ```tsx
 // ANTES:
-Mascoticas
-
 // DESPUÉS:
-[TU_MARCA]
+Mascoticas[TU_MARCA];
 ```
 
 ---
@@ -313,6 +333,7 @@ Mascoticas
 ### 8. ✅ **src/components/HomeHero.tsx**
 
 **Cambio 1 - Aria label (LÍNEA 117):**
+
 ```tsx
 // ANTES:
 aria-label="Bienvenida a Mascoticas"
@@ -322,21 +343,21 @@ aria-label="Bienvenida a [TU_MARCA]"
 ```
 
 **Cambio 2 - Texto (LÍNEA 201):**
+
 ```tsx
 // ANTES:
-Mascoticas
-
 // DESPUÉS:
-[TU_MARCA]
+Mascoticas[TU_MARCA];
 ```
 
 **Cambio 3 - Alt imagen (LÍNEA 232):**
+
 ```tsx
 // ANTES:
-alt="Mascoticas - Especialistas en adopción de mascotas"
+alt = "Mascoticas - Especialistas en adopción de mascotas";
 
 // DESPUÉS:
-alt="[TU_MARCA] - [TU_DESCRIPCIÓN]"
+alt = "[TU_MARCA] - [TU_DESCRIPCIÓN]";
 ```
 
 ---
@@ -344,6 +365,7 @@ alt="[TU_MARCA] - [TU_DESCRIPCIÓN]"
 ### 9. ✅ **src/components/SobreNosotros.tsx**
 
 **Cambio único (LÍNEA 81):**
+
 ```tsx
 // ANTES:
 En Mascoticas nos apasiona ayudar a las personas a encontrar a su mejor amigo peludo.
@@ -357,14 +379,12 @@ En [TU_MARCA] nos apasiona [TU_MISIÓN]
 ### 10. ✅ **src/components/OptimizedImage.tsx**
 
 **Cambios (LÍNEAS 42-43):**
+
 ```tsx
 // ANTES:
-`${breedName} - ${alt} - Mascoticas Medellín criadero certificado`
-`${alt} - Mascoticas Medellín cachorros de raza pura`
-
+`${breedName} - ${alt} - Mascoticas Medellín criadero certificado``${alt} - Mascoticas Medellín cachorros de raza pura`
 // DESPUÉS:
-`${breedName} - ${alt} - [TU_MARCA] [TU_DESCRIPCIÓN]`
-`${alt} - [TU_MARCA] [TU_DESCRIPCIÓN]`
+`${breedName} - ${alt} - [TU_MARCA] [TU_DESCRIPCIÓN]``${alt} - [TU_MARCA] [TU_DESCRIPCIÓN]`;
 ```
 
 ---
@@ -372,6 +392,7 @@ En [TU_MARCA] nos apasiona [TU_MISIÓN]
 ### 11. ✅ **src/components/SEO/BreedPageSEO.tsx**
 
 **Cambio (LÍNEA 28):**
+
 ```tsx
 // ANTES:
 title: `${breedName} en Medellín - Cachorros de Raza ${categoryText} | Mascoticas`,
@@ -385,6 +406,7 @@ title: `${breedName} en Medellín - Cachorros de Raza ${categoryText} | [TU_MARC
 ### 12. ✅ **src/app/admin/page.tsx**
 
 **Cambio (LÍNEA 49):**
+
 ```tsx
 // ANTES:
 <h1 className="text-2xl font-bold text-white">Mascoticas Admin</h1>
@@ -398,6 +420,7 @@ title: `${breedName} en Medellín - Cachorros de Raza ${categoryText} | [TU_MARC
 ### 13. ✅ **src/app/admin/categories/page.tsx**
 
 **Cambio (LÍNEA 58):**
+
 ```typescript
 // ANTES:
 formDataUpload.append("folder", "mascoticas-med/categories");
@@ -411,6 +434,7 @@ formDataUpload.append("folder", "tu-nueva-marca-med/categories");
 ### 14. ✅ **src/app/admin/breeds/page.tsx**
 
 **Cambios (LÍNEAS 157, 198):**
+
 ```typescript
 // ANTES:
 formDataUpload.append("folder", "mascoticas-med/breeds");
@@ -426,6 +450,7 @@ formDataUpload.append("folder", "tu-nueva-marca-med/breeds/gallery");
 ### 15. ✅ **src/app/admin/promotions/page.tsx**
 
 **Cambio (LÍNEA 137):**
+
 ```typescript
 // ANTES:
 formDataUpload.append("folder", "mascoticas-med/promotions");
@@ -439,6 +464,7 @@ formDataUpload.append("folder", "tu-nueva-marca-med/promotions");
 ### 16. ✅ **.env**
 
 **Comentario de referencia (LÍNEA 2):**
+
 ```
 # ANTES:
 #DATABASE_URL="postgresql://postgres:Nuizmosca10@localhost:5432/mascoticas_med"
@@ -451,7 +477,8 @@ formDataUpload.append("folder", "tu-nueva-marca-med/promotions");
 
 ### 17. ✅ **public/LOGO.png**
 
-**Acción:** 
+**Acción:**
+
 1. Guardar el nuevo logo como `LOGO.png` en la carpeta `/public`
 2. Reemplazar el archivo actual
 3. **Dimensiones recomendadas:** 150-200px de ancho
@@ -461,6 +488,7 @@ formDataUpload.append("folder", "tu-nueva-marca-med/promotions");
 ### 18. ✅ **public/favicon.ico**
 
 **Acción:**
+
 1. Guardar nuevo favicon en `/public/favicon.ico`
 2. Reemplazar el archivo actual
 3. **Dimensiones:** 32x32 píxeles mínimo
@@ -470,6 +498,7 @@ formDataUpload.append("folder", "tu-nueva-marca-med/promotions");
 ### 19. ✅ **public/site.webmanifest**
 
 **Cambio:**
+
 ```json
 // ANTES:
 {
@@ -493,6 +522,7 @@ formDataUpload.append("folder", "tu-nueva-marca-med/promotions");
 Si quieres usar Find & Replace en VS Code, aquí están los patrones:
 
 ### Patrón 1: Marca completa
+
 ```
 Buscar:    Mascoticas Medellín
 Reemplazar: [TU_MARCA_COMPLETA]
@@ -500,6 +530,7 @@ Archivos:  *.tsx, *.ts, *.json
 ```
 
 ### Patrón 2: Marca simple
+
 ```
 Buscar:    Mascoticas
 Reemplazar: [TU_MARCA]
@@ -507,6 +538,7 @@ Archivos:  *.tsx, *.ts (excepto node_modules)
 ```
 
 ### Patrón 3: Carpeta Cloudinary
+
 ```
 Buscar:    mascoticas-med
 Reemplazar: tu-nueva-marca-med
@@ -514,6 +546,7 @@ Archivos:  *.ts, *.tsx
 ```
 
 ### Patrón 4: Email
+
 ```
 Buscar:    info@mascoticastmedellin.com
 Reemplazar: info@[tu_dominio].com
@@ -521,6 +554,7 @@ Archivos:  *.tsx, *.ts, *.md
 ```
 
 ### Patrón 5: Dominio
+
 ```
 Buscar:    mascoticasbucaramangamedellin.com
 Reemplazar: [tu_nuevo_dominio]
@@ -566,6 +600,7 @@ Archivos:  *.tsx, *.ts, *.md
 ## ⚠️ ERRORES COMUNES A EVITAR
 
 ❌ **NO hagas esto:**
+
 - Cambiar nombres de variables internas (ej: "breeds", "categories")
 - Cambiar rutas API sin razón
 - Reemplazar en archivos node_modules
@@ -573,6 +608,7 @@ Archivos:  *.tsx, *.ts, *.md
 - Olvidar reemplazar el logo
 
 ✅ **SÍ haz esto:**
+
 - Mantén consistencia en todos los cambios
 - Verifica cada cambio después de hacerlo
 - Haz backup antes de empezar

@@ -2,39 +2,40 @@
 
 **Estado:** Análisis Completo - Listo para Implementación  
 **Total de archivos a modificar:** 19  
-**Total de cambios necesarios:** ~90  
+**Total de cambios necesarios:** ~90
 
 ---
 
 ## 📊 TABLA MAESTRA DE CAMBIOS
 
-| # | Archivo | Ubicación | Tipo Cambio | Líneas | Criticidad | Cambios |
-|---|---------|-----------|-------------|--------|-----------|---------|
-| 1 | package.json | Raíz | Config | 2 | 🔴 CRÍTICO | 1 |
-| 2 | layout.tsx | src/app/ | SEO/Metadata | 17,18,39,40,62,64,80,82,102,103,105,126,210,212,303,341 | 🔴 CRÍTICO | 15+ |
-| 3 | cloudinary.ts | src/lib/ | Config | 18 | 🔴 CRÍTICO | 1 |
-| 4 | LocalBusinessSchema.tsx | src/components/SEO/ | SEO/Schema | 10,11,13,29,35,36 | 🟡 ALTO | 6 |
-| 5 | BreedPageSEO.tsx | src/components/SEO/ | SEO | 28 | 🟡 ALTO | 1 |
-| 6 | Nav.tsx | src/components/ | UI/Text | 107,280 | 🟡 ALTO | 2 |
-| 7 | Footer.tsx | src/components/ | UI/Text | 149,176 | 🟡 ALTO | 2 |
-| 8 | LoadingScreen.tsx | src/components/ | UI/Text | 163,186 | 🟡 ALTO | 2 |
-| 9 | HomeHero.tsx | src/components/ | UI/Text | 117,201,232 | 🟡 ALTO | 3 |
-| 10 | SobreNosotros.tsx | src/components/ | Text | 81 | 🟡 ALTO | 1 |
-| 11 | OptimizedImage.tsx | src/components/ | Text/Alt | 42,43 | 🟡 ALTO | 2 |
-| 12 | admin/page.tsx | src/app/admin/ | UI/Text | 49 | 🟡 ALTO | 1 |
-| 13 | categories/page.tsx | src/app/admin/ | Config | 58 | 🟢 MEDIO | 1 |
-| 14 | breeds/page.tsx | src/app/admin/ | Config | 157,198 | 🟢 MEDIO | 2 |
-| 15 | promotions/page.tsx | src/app/admin/ | Config | 137 | 🟢 MEDIO | 1 |
-| 16 | .env | Raíz | Config | 2 | ⚪ BAJO | 1 |
-| 17 | LOGO.png | public/ | Asset | - | 🔴 CRÍTICO | Reemplazar |
-| 18 | favicon.ico | public/ | Asset | - | ⚪ BAJO | Reemplazar |
-| 19 | site.webmanifest | public/ | Config | varies | ⚪ BAJO | 2 |
+| #   | Archivo                 | Ubicación           | Tipo Cambio  | Líneas                                                  | Criticidad | Cambios    |
+| --- | ----------------------- | ------------------- | ------------ | ------------------------------------------------------- | ---------- | ---------- |
+| 1   | package.json            | Raíz                | Config       | 2                                                       | 🔴 CRÍTICO | 1          |
+| 2   | layout.tsx              | src/app/            | SEO/Metadata | 17,18,39,40,62,64,80,82,102,103,105,126,210,212,303,341 | 🔴 CRÍTICO | 15+        |
+| 3   | cloudinary.ts           | src/lib/            | Config       | 18                                                      | 🔴 CRÍTICO | 1          |
+| 4   | LocalBusinessSchema.tsx | src/components/SEO/ | SEO/Schema   | 10,11,13,29,35,36                                       | 🟡 ALTO    | 6          |
+| 5   | BreedPageSEO.tsx        | src/components/SEO/ | SEO          | 28                                                      | 🟡 ALTO    | 1          |
+| 6   | Nav.tsx                 | src/components/     | UI/Text      | 107,280                                                 | 🟡 ALTO    | 2          |
+| 7   | Footer.tsx              | src/components/     | UI/Text      | 149,176                                                 | 🟡 ALTO    | 2          |
+| 8   | LoadingScreen.tsx       | src/components/     | UI/Text      | 163,186                                                 | 🟡 ALTO    | 2          |
+| 9   | HomeHero.tsx            | src/components/     | UI/Text      | 117,201,232                                             | 🟡 ALTO    | 3          |
+| 10  | SobreNosotros.tsx       | src/components/     | Text         | 81                                                      | 🟡 ALTO    | 1          |
+| 11  | OptimizedImage.tsx      | src/components/     | Text/Alt     | 42,43                                                   | 🟡 ALTO    | 2          |
+| 12  | admin/page.tsx          | src/app/admin/      | UI/Text      | 49                                                      | 🟡 ALTO    | 1          |
+| 13  | categories/page.tsx     | src/app/admin/      | Config       | 58                                                      | 🟢 MEDIO   | 1          |
+| 14  | breeds/page.tsx         | src/app/admin/      | Config       | 157,198                                                 | 🟢 MEDIO   | 2          |
+| 15  | promotions/page.tsx     | src/app/admin/      | Config       | 137                                                     | 🟢 MEDIO   | 1          |
+| 16  | .env                    | Raíz                | Config       | 2                                                       | ⚪ BAJO    | 1          |
+| 17  | LOGO.png                | public/             | Asset        | -                                                       | 🔴 CRÍTICO | Reemplazar |
+| 18  | favicon.ico             | public/             | Asset        | -                                                       | ⚪ BAJO    | Reemplazar |
+| 19  | site.webmanifest        | public/             | Config       | varies                                                  | ⚪ BAJO    | 2          |
 
 ---
 
 ## 🔴 ARCHIVOS CRÍTICOS (HACER PRIMERO)
 
 ### 1️⃣ **package.json**
+
 ```
 📍 Ubicación: c:\Users\User-SSD\Desktop\mascoticas-med\package.json
 📏 Tamaño: Pequeño
@@ -50,6 +51,7 @@ IMPACTO: Bajo - Solo identidad del proyecto
 ---
 
 ### 2️⃣ **src/app/layout.tsx** ⭐ MÁS IMPORTANTE
+
 ```
 📍 Ubicación: c:\Users\User-SSD\Desktop\mascoticas-med\src\app\layout.tsx
 📏 Tamaño: Grande (384 líneas)
@@ -89,6 +91,7 @@ VALIDAR: Google Structured Data Test después
 ---
 
 ### 3️⃣ **src/lib/cloudinary.ts**
+
 ```
 📍 Ubicación: c:\Users\User-SSD\Desktop\mascoticas-med\src\lib\cloudinary.ts
 📏 Tamaño: Pequeño (58 líneas)
@@ -110,6 +113,7 @@ VERIFICAR: Que la nueva carpeta exista en Cloudinary
 ---
 
 ### 4️⃣ **public/LOGO.png**
+
 ```
 📍 Ubicación: c:\Users\User-SSD\Desktop\mascoticas-med\public\LOGO.png
 📏 Tamaño: Imagen (aprox. 50-200KB)
@@ -137,6 +141,7 @@ VALIDAR: Que cargue correctamente en Nav y Footer
 ## 🟡 ARCHIVOS DE ALTO IMPACTO (HACER SEGUNDO)
 
 ### 5️⃣ **src/components/SEO/LocalBusinessSchema.tsx**
+
 ```
 📍 Ubicación: c:\Users\User-SSD\Desktop\mascoticas-med\src\components\SEO\LocalBusinessSchema.tsx
 📏 Tamaño: Pequeño (47 líneas)
@@ -163,6 +168,7 @@ VALIDAR: Google Structured Data Test
 ---
 
 ### 6️⃣ **src/components/Nav.tsx**
+
 ```
 📍 Ubicación: c:\Users\User-SSD\Desktop\mascoticas-med\src\components\Nav.tsx
 📏 Tamaño: Grande (340 líneas)
@@ -180,6 +186,7 @@ VALIDAR: Logo carga correctamente
 ---
 
 ### 7️⃣ **src/components/Footer.tsx**
+
 ```
 📍 Ubicación: c:\Users\User-SSD\Desktop\mascoticas-med\src\components\Footer.tsx
 📏 Tamaño: Grande (368 líneas)
@@ -197,6 +204,7 @@ VALIDAR: Logo carga correctamente en footer
 ---
 
 ### 8️⃣ **src/components/LoadingScreen.tsx**
+
 ```
 📍 Ubicación: c:\Users\User-SSD\Desktop\mascoticas-med\src\components\LoadingScreen.tsx
 📏 Tamaño: Mediano
@@ -214,6 +222,7 @@ VALIDAR: Pantalla de carga muestra nombre correcto
 ---
 
 ### 9️⃣ **src/components/HomeHero.tsx**
+
 ```
 📍 Ubicación: c:\Users\User-SSD\Desktop\mascoticas-med\src\components\HomeHero.tsx
 📏 Tamaño: Mediano
@@ -232,6 +241,7 @@ VALIDAR: Home page muestra nombre correcto
 ---
 
 ### 🔟 **src/components/SobreNosotros.tsx**
+
 ```
 📍 Ubicación: c:\Users\User-SSD\Desktop\mascoticas-med\src\components\SobreNosotros.tsx
 📏 Tamaño: Pequeño
@@ -250,6 +260,7 @@ VALIDAR: Sección "Sobre nosotros" actualizada
 ---
 
 ### 1️⃣1️⃣ **src/components/OptimizedImage.tsx**
+
 ```
 📍 Ubicación: c:\Users\User-SSD\Desktop\mascoticas-med\src\components\OptimizedImage.tsx
 📏 Tamaño: Pequeño
@@ -269,6 +280,7 @@ VALIDAR: ALT text actualizado en páginas de razas
 ---
 
 ### 1️⃣2️⃣ **src/components/SEO/BreedPageSEO.tsx**
+
 ```
 📍 Ubicación: c:\Users\User-SSD\Desktop\mascoticas-med\src\components\SEO\BreedPageSEO.tsx
 📏 Tamaño: Pequeño
@@ -285,6 +297,7 @@ VALIDAR: Títulos correctos en páginas dinámicas
 ---
 
 ### 1️⃣3️⃣ **src/app/admin/page.tsx**
+
 ```
 📍 Ubicación: c:\Users\User-SSD\Desktop\mascoticas-med\src\app\admin\page.tsx
 📏 Tamaño: Mediano
@@ -303,6 +316,7 @@ VALIDAR: Admin panel muestra nombre correcto
 ## 🟢 ARCHIVOS DE IMPACTO MEDIO (HACER TERCERO)
 
 ### 1️⃣4️⃣ **src/app/admin/categories/page.tsx**
+
 ```
 📍 Ubicación: c:\Users\User-SSD\Desktop\mascoticas-med\src\app\admin\categories\page.tsx
 📏 Tamaño: Grande
@@ -322,6 +336,7 @@ VALIDAR: Que la carpeta "nueva-marca-med" exista en Cloudinary
 ---
 
 ### 1️⃣5️⃣ **src/app/admin/breeds/page.tsx**
+
 ```
 📍 Ubicación: c:\Users\User-SSD\Desktop\mascoticas-med\src\app\admin\breeds\page.tsx
 📏 Tamaño: Grande (muy grande)
@@ -344,6 +359,7 @@ VALIDAR: Subcarpetas existan en Cloudinary
 ---
 
 ### 1️⃣6️⃣ **src/app/admin/promotions/page.tsx**
+
 ```
 📍 Ubicación: c:\Users\User-SSD\Desktop\mascoticas-med\src\app\admin\promotions\page.tsx
 📏 Tamaño: Grande
@@ -365,6 +381,7 @@ VALIDAR: Carpeta exista en Cloudinary
 ## ⚪ ARCHIVOS DE BAJO IMPACTO (HACER AL FINAL)
 
 ### 1️⃣7️⃣ **.env**
+
 ```
 📍 Ubicación: c:\Users\User-SSD\Desktop\mascoticas-med\.env
 📏 Tamaño: Muy pequeño
@@ -386,6 +403,7 @@ VALIDAR: No afecta funcionalidad
 ---
 
 ### 1️⃣8️⃣ **public/favicon.ico**
+
 ```
 📍 Ubicación: c:\Users\User-SSD\Desktop\mascoticas-med\public\favicon.ico
 📏 Tamaño: Imagen pequeña
@@ -410,6 +428,7 @@ VALIDAR: Favicon visible en tab del navegador
 ---
 
 ### 1️⃣9️⃣ **public/site.webmanifest**
+
 ```
 📍 Ubicación: c:\Users\User-SSD\Desktop\mascoticas-med\public\site.webmanifest
 📏 Tamaño: Muy pequeño
@@ -508,16 +527,16 @@ TIEMPO TOTAL: ~75 minutos (1h 15 min)
 
 **VARIABLES A REEMPLAZAR:**
 
-| Viejo | Nuevo |
-|------|-------|
-| `mascoticas-med` | `tu-nueva-marca-med` |
-| `Mascoticas` | `[TU_MARCA]` |
-| `Mascoticas Medellín` | `[TU_MARCA] [UBICACIÓN]` |
-| `Mascoticas Bucaramanga Medellin` | `[TU_MARCA] [UBICACIÓN_COMPLETA]` |
-| `mascoticasbucaramangamedellin.com` | `[tu_dominio]` |
-| `mascoticastmedellin.com` | `[tu_dominio]` |
-| `info@mascoticastmedellin.com` | `[nuevo_email]` |
-| `@MascoticanMedellin` | `@[tu_handle_twitter]` |
+| Viejo                               | Nuevo                             |
+| ----------------------------------- | --------------------------------- |
+| `mascoticas-med`                    | `tu-nueva-marca-med`              |
+| `Mascoticas`                        | `[TU_MARCA]`                      |
+| `Mascoticas Medellín`               | `[TU_MARCA] [UBICACIÓN]`          |
+| `Mascoticas Bucaramanga Medellin`   | `[TU_MARCA] [UBICACIÓN_COMPLETA]` |
+| `mascoticasbucaramangamedellin.com` | `[tu_dominio]`                    |
+| `mascoticastmedellin.com`           | `[tu_dominio]`                    |
+| `info@mascoticastmedellin.com`      | `[nuevo_email]`                   |
+| `@MascoticanMedellin`               | `@[tu_handle_twitter]`            |
 
 ---
 
