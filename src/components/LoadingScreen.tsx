@@ -159,7 +159,7 @@ const LoadingScreen = () => {
             }}
           >
             <Image
-              src="/LOGO.png"
+              src="/thepuppyhouselogo.png"
               alt="The Puppy House"
               width={150}
               height={150}
