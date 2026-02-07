@@ -46,9 +46,8 @@ const Nav = ({
 
   return (
     <nav
-      className={`bg-gradient-to-b from-black via-zinc-900 to-black text-white fixed top-0 left-0 right-0 w-full shadow-2xl shadow-amber-900/50 transition-all overflow-hidden border-b border-amber-500/30 ${
-        isModalOpen ? "z-10" : "z-50"
-      }`}
+      className={`bg-gradient-to-b from-black via-zinc-900 to-black text-white fixed top-0 left-0 right-0 w-full shadow-2xl shadow-amber-900/50 transition-all overflow-hidden border-b border-amber-500/30 ${isModalOpen ? "z-10" : "z-50"
+        }`}
       aria-label="Navegación principal"
     >
       {/* Animated top glow line */}
@@ -83,7 +82,7 @@ const Nav = ({
       {/* Contenido principal */}
       <div className="relative z-10 max-w-full mx-auto px-4 py-3 sm:px-6 sm:py-4 flex items-center justify-between overflow-hidden">
         {/* Logo con efecto luxury */}
-        <motion.div 
+        <motion.div
           className="flex-shrink-0"
           whileHover={{ scale: 1.05 }}
         >
@@ -96,7 +95,7 @@ const Nav = ({
             <motion.div
               className="absolute -inset-2 bg-amber-500/20 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity"
             />
-            
+
             <motion.div
               animate={{ rotate: [0, 10, -10, 0] }}
               transition={{ duration: 1, repeat: Infinity, repeatType: "loop" }}
@@ -121,17 +120,16 @@ const Nav = ({
             { id: "contacto", label: "Contáctanos", icon: "📞" },
             { id: "clientes", label: "Clientes Felices", icon: "⭐" },
           ].map((item) => (
-            <motion.li 
+            <motion.li
               key={item.id}
               whileHover={{ y: -2 }}
             >
               <motion.button
                 onClick={() => onNavigate(item.id as Section)}
-                className={`relative px-5 py-2.5 rounded-xl font-semibold transition-all text-sm flex items-center gap-2 ${
-                  currentSection === item.id
+                className={`relative px-5 py-2.5 rounded-xl font-semibold transition-all text-sm flex items-center gap-2 ${currentSection === item.id
                     ? "bg-gradient-to-r from-amber-600 to-amber-500 text-white shadow-lg shadow-amber-500/40"
                     : "text-white/80 hover:text-white"
-                }`}
+                  }`}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -142,7 +140,7 @@ const Nav = ({
                     whileHover={{ opacity: 0.2 }}
                   />
                 )}
-                
+
                 <span className="relative z-10 text-lg">{item.icon}</span>
                 <span className="relative z-10">{item.label}</span>
 
@@ -269,9 +267,13 @@ const Nav = ({
                   animate={{ y: [0, -5, 0] }}
                   transition={{ duration: 3, repeat: Infinity }}
                 >
-                  <div className="w-16 h-16 rounded-full border-2 border-amber-500/50 flex items-center justify-center">
-                    <span className="text-2xl">🐕</span>
-                  </div>
+                  <Image
+                    src="/thepuppyhouselogo.png"
+                    alt="Logo The Puppy House"
+                    width={64}
+                    height={64}
+                    className="object-contain rounded-full border-2 border-amber-500/50"
+                  />
                 </motion.div>
 
                 {/* Título decorativo */}
@@ -294,8 +296,8 @@ const Nav = ({
                     { id: "contacto", label: "Contáctanos", icon: "📞" },
                     { id: "clientes", label: "Clientes Felices", icon: "⭐" },
                   ].map((item, idx) => (
-                    <motion.li 
-                      key={item.id} 
+                    <motion.li
+                      key={item.id}
                       className="w-full"
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
@@ -306,11 +308,10 @@ const Nav = ({
                           onNavigate(item.id as Section);
                           setIsMenuOpen(false);
                         }}
-                        className={`py-3 px-6 w-full text-center rounded-2xl font-semibold transition-all flex items-center justify-center gap-3 ${
-                          currentSection === item.id
+                        className={`py-3 px-6 w-full text-center rounded-2xl font-semibold transition-all flex items-center justify-center gap-3 ${currentSection === item.id
                             ? "bg-gradient-to-r from-amber-600 to-amber-500 text-white shadow-lg shadow-amber-500/50 border border-amber-400/50"
                             : "bg-zinc-800/50 text-white border border-zinc-700/50 hover:border-amber-500/50"
-                        }`}
+                          }`}
                         whileHover={{ scale: 1.05, y: -2 }}
                         whileTap={{ scale: 0.95 }}
                       >
