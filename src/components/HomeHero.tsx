@@ -113,7 +113,7 @@ const HomeHero = () => {
 
   return (
     <section
-      className="relative w-full h-screen bg-gradient-to-b from-black via-gray-900 to-amber-900 text-white overflow-hidden flex flex-col justify-center items-center px-4"
+      className="relative w-full h-screen bg-gradient-to-b from-black via-gray-900 to-amber-900 text-white overflow-hidden flex flex-col justify-center items-center px-4 pt-16 sm:pt-12 md:pt-24"
       aria-label="Bienvenida a The Puppy House"
     >
       {/* Efecto de chispas rojas - usar datos estáticos */}
