@@ -127,8 +127,8 @@ const Nav = ({
               <motion.button
                 onClick={() => onNavigate(item.id as Section)}
                 className={`relative px-5 py-2.5 rounded-xl font-semibold transition-all text-sm flex items-center gap-2 ${currentSection === item.id
-                    ? "bg-gradient-to-r from-amber-600 to-amber-500 text-white shadow-lg shadow-amber-500/40"
-                    : "text-white/80 hover:text-white"
+                  ? "bg-gradient-to-r from-amber-600 to-amber-500 text-white shadow-lg shadow-amber-500/40"
+                  : "text-white/80 hover:text-white"
                   }`}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -309,8 +309,8 @@ const Nav = ({
                           setIsMenuOpen(false);
                         }}
                         className={`py-3 px-6 w-full text-center rounded-2xl font-semibold transition-all flex items-center justify-center gap-3 ${currentSection === item.id
-                            ? "bg-gradient-to-r from-amber-600 to-amber-500 text-white shadow-lg shadow-amber-500/50 border border-amber-400/50"
-                            : "bg-zinc-800/50 text-white border border-zinc-700/50 hover:border-amber-500/50"
+                          ? "bg-gradient-to-r from-amber-600 to-amber-500 text-white shadow-lg shadow-amber-500/50 border border-amber-400/50"
+                          : "bg-zinc-800/50 text-white border border-zinc-700/50 hover:border-amber-500/50"
                           }`}
                         whileHover={{ scale: 1.05, y: -2 }}
                         whileTap={{ scale: 0.95 }}
