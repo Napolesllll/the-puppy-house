@@ -152,34 +152,34 @@ export default function RazaPage() {
       try {
         setLoading(true);
         setError(null);
-        
+
         // Obtener todas las categorías para encontrar el ID por slug
         const categoriesRes = await fetch("/api/admin/categories");
         const categories = await categoriesRes.json();
-        
+
         const category = categories.find((cat: any) => cat.slug === categoria);
-        
+
         if (!category) {
           setError("Categoría no encontrada");
           router.push("/not-found");
           return;
         }
-        
+
         // Obtener razas filtradas por categoría
         const breedsRes = await fetch(`/api/admin/breeds?categoryId=${category.id}`);
         const breedsData = await breedsRes.json();
-        
+
         if (!breedsData || breedsData.length === 0) {
           setError("No hay razas en esta categoría");
         }
-        
+
         // Ordenar razas: Pomerania primero, luego el resto alfabéticamente
         const sortedBreeds = breedsData.sort((a: Breed, b: Breed) => {
           if (a.name.toLowerCase().includes('pomerania')) return -1;
           if (b.name.toLowerCase().includes('pomerania')) return 1;
           return a.name.localeCompare(b.name);
         });
-        
+
         setBreeds(sortedBreeds);
       } catch (err) {
         console.error("Error fetching breeds:", err);
@@ -226,7 +226,7 @@ export default function RazaPage() {
         <FloatingPaws />
 
         <h1 className="text-4xl md:text-5xl font-extrabold text-center mb-14 capitalize text-white tracking-wider">
-          🐾 Razas {categoria}
+          🐾  {categoria}
         </h1>
 
         {loading ? (
