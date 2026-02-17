@@ -31,14 +31,14 @@ interface BreedModalProps {
 
 const BreedModal = ({ breed, onClose }: BreedModalProps) => {
   // Usar imágenes de la BD si existen, sino usar la imagen principal
-  const breedImages = breed.images && breed.images.length > 0 
+  const breedImages = breed.images && breed.images.length > 0
     ? breed.images.map(img => img.url)
     : [breed.image];
 
   const malePrice = breed.prices?.[0]?.malePrice || 0;
   const femalePrice = breed.prices?.[0]?.femalePrice || 0;
   return (
-    <div className="fixed inset-0 bg-black/50 flex mt-20 items-center justify-center z-[1000] backdrop-blur-sm">
+    <div className="fixed inset-0 bg-black/50 flex  items-center justify-center z-[1000] backdrop-blur-sm">
       <div className="bg-zinc-800 rounded-xl p-4 md:p-8 max-w-4xl w-full mx-4 relative flex flex-col md:flex-row gap-4 md:gap-6 border-2 border-white/10 backdrop-blur-xl">
         <button
           onClick={onClose}
