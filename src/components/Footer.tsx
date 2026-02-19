@@ -321,7 +321,8 @@ export default function Footer({ currentSection, onNavigate }: FooterProps) {
                 className="p-2 rounded-lg bg-amber-500/10 border border-amber-500/20 hover:border-amber-500/40 transition-all"
                 whileHover={{ scale: 1.05 }}
               >
-                <p className="text-xs text-amber-400 font-semibold mb-1">Teléfono</p>
+                <p className="text-xs text-amber-400 font-semibold mb-1">Teléfonos</p>
+                <p className="text-zinc-200">+57 324 232 2851 </p>
                 <p className="text-zinc-200">+57 324 232 2851 </p>
               </motion.div>
             </div>
