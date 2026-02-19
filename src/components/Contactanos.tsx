@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { FaFacebook, FaInstagram } from "react-icons/fa";
 
 const Contactanos = () => {
   return (
@@ -16,7 +17,7 @@ const Contactanos = () => {
               left: `${Math.random() * 100}%`,
               rotate: `${Math.random() * 360}deg`
             }}
-            animate={{ 
+            animate={{
               y: [0, Math.random() * 20 - 10],
               x: [0, Math.random() * 20 - 10]
             }}
@@ -62,7 +63,7 @@ const Contactanos = () => {
                   placeholder="Tu nombre"
                 />
               </div>
-              
+
               <div>
                 <label htmlFor="email" className="block text-lg mb-2">Email</label>
                 <input
@@ -72,7 +73,7 @@ const Contactanos = () => {
                   placeholder="tu@email.com"
                 />
               </div>
-              
+
               <div>
                 <label htmlFor="message" className="block text-lg mb-2">Mensaje</label>
                 <textarea
@@ -82,7 +83,7 @@ const Contactanos = () => {
                   placeholder="Tu mensaje..."
                 ></textarea>
               </div>
-              
+
               <button
                 type="submit"
                 className="bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 px-8 rounded-lg transition-colors duration-300"
@@ -105,40 +106,49 @@ const Contactanos = () => {
                 <p className="text-zinc-300">Av. Mascotas Felices 123, Ciudad Canina</p>
               </div>
             </div>
-            
+
             <div className="flex items-start space-x-4">
               <div className="text-amber-500 text-2xl mt-1">📞</div>
               <div>
                 <h3 className="text-xl font-bold mb-2">Teléfonos</h3>
-                <p className="text-zinc-300">+57 316 316 9143</p>
-                <p className="text-zinc-300">+57 322 932 2621</p>
+                <p className="text-zinc-300">+57 324 232 2851</p>
+                <p className="text-zinc-300">+57 300 557 9720</p>
               </div>
             </div>
-            
+
             <div className="flex items-start space-x-4">
               <div className="text-amber-500 text-2xl mt-1">✉️</div>
               <div>
                 <h3 className="text-xl font-bold mb-2">Email</h3>
-                <p className="text-zinc-300">jeananderson2208@gmail.com</p>
+                <p className="text-zinc-300">sindycpineda@gmail.com</p>
               </div>
             </div>
-            
+
             <div className="pt-6">
               <h3 className="text-xl font-bold mb-4">Síguenos</h3>
               <div className="flex space-x-4">
-                {[ 'tiktok'].map((social) => (
+                {[
+                  {
+                    Icon: FaFacebook,
+                    url: "https://www.facebook.com/share/17ijf3aPML/",
+                    label: "Facebook",
+                  },
+                  {
+                    Icon: FaInstagram,
+                    url: "https://www.instagram.com/the_puppy_house_kc?igsh=OGMzZjIwNWZ1MTJp",
+                    label: "Instagram",
+                  },
+                ].map((social, idx) => (
                   <motion.a
-                    key={social}
-                    href="#"
+                    key={idx}
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     whileHover={{ y: -3 }}
-                    className="bg-zinc-800 hover:bg-zinc-700 w-12 h-12 rounded-full flex items-center justify-center transition-colors"
+                    className="bg-zinc-800 hover:bg-amber-600 w-12 h-12 rounded-full flex items-center justify-center transition-colors text-xl text-white"
+                    title={social.label}
                   >
-                    <Image
-                      src={`/icons/${social}.svg`}
-                      alt={social}
-                      width={24}
-                      height={24}
-                    />
+                    <social.Icon />
                   </motion.a>
                 ))}
               </div>

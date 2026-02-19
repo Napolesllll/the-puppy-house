@@ -5,7 +5,7 @@ import { PawPrint as PawIcon } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { FaTiktok } from "react-icons/fa";
+import { FaFacebook, FaInstagram } from "react-icons/fa";
 
 export type Section = "inicio" | "sobre" | "contacto" | "clientes";
 
@@ -115,7 +115,7 @@ export default function Footer({ currentSection, onNavigate }: FooterProps) {
               filter: "drop-shadow(0 0 8px currentColor)",
             }}
             initial={{ y: 20, opacity: 0, scale: 0.5 }}
-            animate={{ 
+            animate={{
               y: [-20, -40, -20],
               opacity: paw.opacity,
               scale: [0.5, 1, 0.5],
@@ -179,7 +179,7 @@ export default function Footer({ currentSection, onNavigate }: FooterProps) {
                 className="drop-shadow-2xl"
               />
             </button>
-          ) : ( 
+          ) : (
             <Link href="/" className="relative">
               <Image
                 src="/thepuppyhouselogo.png"
@@ -202,7 +202,7 @@ export default function Footer({ currentSection, onNavigate }: FooterProps) {
           Encuentra a tu <span className="text-amber-400 font-semibold">mejor amigo peludo</span>. <span className="text-amber-500">¡Juntos hasta el fin!</span>
         </motion.p>
 
-        {/* Grid de contenido con estilo luxury */} 
+        {/* Grid de contenido con estilo luxury */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mb-12 relative z-10">
           {/* Enlaces */}
           <motion.div
@@ -214,13 +214,13 @@ export default function Footer({ currentSection, onNavigate }: FooterProps) {
             <motion.div
               className="absolute inset-0 bg-gradient-to-br from-amber-600/0 via-transparent to-amber-500/0 opacity-0 group-hover:opacity-100 rounded-2xl transition-opacity duration-500"
             />
-            
+
             <h3 className="text-lg font-black mb-4 text-amber-400 drop-shadow-lg relative z-10">
               🔗 Enlaces
             </h3>
             <ul className="space-y-3 text-sm relative z-10">
               {links.map((item, idx) => (
-                <motion.li 
+                <motion.li
                   key={item.id}
                   initial={{ opacity: 0, x: -10 }}
                   animate={{ opacity: 1, x: 0 }}
@@ -229,22 +229,20 @@ export default function Footer({ currentSection, onNavigate }: FooterProps) {
                   {onNavigate ? (
                     <button
                       onClick={() => onNavigate(item.id)}
-                      className={`w-full text-left px-3 py-1.5 rounded-lg transition-all font-medium ${
-                        currentSection === item.id
-                          ? "text-amber-400 bg-amber-500/20 border border-amber-500/40"
-                          : "text-zinc-300 hover:text-amber-300 hover:bg-amber-500/10"
-                      }`}
+                      className={`w-full text-left px-3 py-1.5 rounded-lg transition-all font-medium ${currentSection === item.id
+                        ? "text-amber-400 bg-amber-500/20 border border-amber-500/40"
+                        : "text-zinc-300 hover:text-amber-300 hover:bg-amber-500/10"
+                        }`}
                     >
                       {item.label}
                     </button>
                   ) : (
                     <Link
                       href={sectionHref[item.id]}
-                      className={`block px-3 py-1.5 rounded-lg transition-all font-medium ${
-                        currentSection === item.id
-                          ? "text-amber-400 bg-amber-500/20 border border-amber-500/40"
-                          : "text-zinc-300 hover:text-amber-300 hover:bg-amber-500/10"
-                      }`}
+                      className={`block px-3 py-1.5 rounded-lg transition-all font-medium ${currentSection === item.id
+                        ? "text-amber-400 bg-amber-500/20 border border-amber-500/40"
+                        : "text-zinc-300 hover:text-amber-300 hover:bg-amber-500/10"
+                        }`}
                     >
                       {item.label}
                     </Link>
@@ -271,9 +269,14 @@ export default function Footer({ currentSection, onNavigate }: FooterProps) {
             <div className="flex justify-center gap-6 text-3xl text-zinc-400 relative z-10">
               {[
                 {
-                  Icon: FaTiktok,
-                  url: "https://www.tiktok.com/@thepuppyhouse?_r=1&_t=ZS-93SpvqrQcJW",
-                  label: "TikTok",
+                  Icon: FaFacebook,
+                  url: "https://www.facebook.com/share/17ijf3aPML/",
+                  label: "Facebook",
+                },
+                {
+                  Icon: FaInstagram,
+                  url: "https://www.instagram.com/the_puppy_house_kc?igsh=OGMzZjIwNWZ1MTJp",
+                  label: "Instagram",
                 },
               ].map((link, idx) => (
                 <motion.a
@@ -312,14 +315,14 @@ export default function Footer({ currentSection, onNavigate }: FooterProps) {
                 whileHover={{ scale: 1.05 }}
               >
                 <p className="text-xs text-amber-400 font-semibold mb-1">Email</p>
-                <p className="text-zinc-200">correo@gmail.com</p>
+                <p className="text-zinc-200">sindycpineda@gmail.com</p>
               </motion.div>
               <motion.div
                 className="p-2 rounded-lg bg-amber-500/10 border border-amber-500/20 hover:border-amber-500/40 transition-all"
                 whileHover={{ scale: 1.05 }}
               >
                 <p className="text-xs text-amber-400 font-semibold mb-1">Teléfono</p>
-                <p className="text-zinc-200">+57 300 000 00 00</p>
+                <p className="text-zinc-200">+57 324 232 2851 </p>
               </motion.div>
             </div>
           </motion.div>
